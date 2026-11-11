@@ -1,0 +1,662 @@
+[
+  {
+    "page": "login",
+    "requested": {
+      "width": 320,
+      "height": 844
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login",
+    "innerWidth": 320,
+    "innerHeight": 844,
+    "docWidth": 320,
+    "bodyWidth": 320,
+    "docHeight": 844,
+    "screenshot": "login-320x844.png"
+  },
+  {
+    "page": "dashboard-unauthenticated",
+    "requested": {
+      "width": 320,
+      "height": 844
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fdashboard",
+    "innerWidth": 320,
+    "innerHeight": 844,
+    "docWidth": 320,
+    "bodyWidth": 320,
+    "docHeight": 844,
+    "screenshot": "dashboard-unauthenticated-320x844.png"
+  },
+  {
+    "page": "forbidden-unauthenticated",
+    "requested": {
+      "width": 320,
+      "height": 844
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fforbidden",
+    "innerWidth": 320,
+    "innerHeight": 844,
+    "docWidth": 320,
+    "bodyWidth": 320,
+    "docHeight": 844,
+    "screenshot": "forbidden-unauthenticated-320x844.png"
+  },
+  {
+    "page": "workflow-overview",
+    "requested": {
+      "width": 320,
+      "height": 844
+    },
+    "title": "System Storage Monitor — Workflow Overview",
+    "url": "file:///C:/Users/0363/Desktop/html/storage-monitor-dashboard/workflow-overview.html",
+    "innerWidth": 320,
+    "innerHeight": 844,
+    "docWidth": 320,
+    "bodyWidth": 320,
+    "docHeight": 1351,
+    "screenshot": "workflow-overview-320x844.png"
+  },
+  {
+    "page": "login",
+    "requested": {
+      "width": 375,
+      "height": 844
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login",
+    "innerWidth": 375,
+    "innerHeight": 844,
+    "docWidth": 375,
+    "bodyWidth": 375,
+    "docHeight": 844,
+    "screenshot": "login-375x844.png"
+  },
+  {
+    "page": "dashboard-unauthenticated",
+    "requested": {
+      "width": 375,
+      "height": 844
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fdashboard",
+    "innerWidth": 375,
+    "innerHeight": 844,
+    "docWidth": 375,
+    "bodyWidth": 375,
+    "docHeight": 844,
+    "screenshot": "dashboard-unauthenticated-375x844.png"
+  },
+  {
+    "page": "forbidden-unauthenticated",
+    "requested": {
+      "width": 375,
+      "height": 844
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fforbidden",
+    "innerWidth": 375,
+    "innerHeight": 844,
+    "docWidth": 375,
+    "bodyWidth": 375,
+    "docHeight": 844,
+    "screenshot": "forbidden-unauthenticated-375x844.png"
+  },
+  {
+    "page": "workflow-overview",
+    "requested": {
+      "width": 375,
+      "height": 844
+    },
+    "title": "System Storage Monitor — Workflow Overview",
+    "url": "file:///C:/Users/0363/Desktop/html/storage-monitor-dashboard/workflow-overview.html",
+    "innerWidth": 375,
+    "innerHeight": 844,
+    "docWidth": 375,
+    "bodyWidth": 375,
+    "docHeight": 1227,
+    "screenshot": "workflow-overview-375x844.png"
+  },
+  {
+    "page": "login",
+    "requested": {
+      "width": 414,
+      "height": 844
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login",
+    "innerWidth": 414,
+    "innerHeight": 844,
+    "docWidth": 414,
+    "bodyWidth": 414,
+    "docHeight": 844,
+    "screenshot": "login-414x844.png"
+  },
+  {
+    "page": "dashboard-unauthenticated",
+    "requested": {
+      "width": 414,
+      "height": 844
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fdashboard",
+    "innerWidth": 414,
+    "innerHeight": 844,
+    "docWidth": 414,
+    "bodyWidth": 414,
+    "docHeight": 844,
+    "screenshot": "dashboard-unauthenticated-414x844.png"
+  },
+  {
+    "page": "forbidden-unauthenticated",
+    "requested": {
+      "width": 414,
+      "height": 844
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fforbidden",
+    "innerWidth": 414,
+    "innerHeight": 844,
+    "docWidth": 414,
+    "bodyWidth": 414,
+    "docHeight": 844,
+    "screenshot": "forbidden-unauthenticated-414x844.png"
+  },
+  {
+    "page": "workflow-overview",
+    "requested": {
+      "width": 414,
+      "height": 844
+    },
+    "title": "System Storage Monitor — Workflow Overview",
+    "url": "file:///C:/Users/0363/Desktop/html/storage-monitor-dashboard/workflow-overview.html",
+    "innerWidth": 414,
+    "innerHeight": 844,
+    "docWidth": 414,
+    "bodyWidth": 414,
+    "docHeight": 1139,
+    "screenshot": "workflow-overview-414x844.png"
+  },
+  {
+    "page": "login",
+    "requested": {
+      "width": 600,
+      "height": 844
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login",
+    "innerWidth": 600,
+    "innerHeight": 844,
+    "docWidth": 600,
+    "bodyWidth": 600,
+    "docHeight": 844,
+    "screenshot": "login-600x844.png"
+  },
+  {
+    "page": "dashboard-unauthenticated",
+    "requested": {
+      "width": 600,
+      "height": 844
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/dashboard",
+    "innerWidth": 600,
+    "innerHeight": 844,
+    "docWidth": 600,
+    "bodyWidth": 600,
+    "docHeight": 844,
+    "screenshot": "dashboard-unauthenticated-600x844.png"
+  },
+  {
+    "page": "forbidden-unauthenticated",
+    "requested": {
+      "width": 600,
+      "height": 844
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fforbidden",
+    "innerWidth": 600,
+    "innerHeight": 844,
+    "docWidth": 600,
+    "bodyWidth": 600,
+    "docHeight": 844,
+    "screenshot": "forbidden-unauthenticated-600x844.png"
+  },
+  {
+    "page": "workflow-overview",
+    "requested": {
+      "width": 600,
+      "height": 844
+    },
+    "title": "System Storage Monitor — Workflow Overview",
+    "url": "file:///C:/Users/0363/Desktop/html/storage-monitor-dashboard/workflow-overview.html",
+    "innerWidth": 600,
+    "innerHeight": 844,
+    "docWidth": 600,
+    "bodyWidth": 600,
+    "docHeight": 896,
+    "screenshot": "workflow-overview-600x844.png"
+  },
+  {
+    "page": "login",
+    "requested": {
+      "width": 768,
+      "height": 900
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login",
+    "innerWidth": 768,
+    "innerHeight": 900,
+    "docWidth": 768,
+    "bodyWidth": 768,
+    "docHeight": 900,
+    "screenshot": "login-768x900.png"
+  },
+  {
+    "page": "dashboard-unauthenticated",
+    "requested": {
+      "width": 768,
+      "height": 900
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fdashboard",
+    "innerWidth": 768,
+    "innerHeight": 900,
+    "docWidth": 768,
+    "bodyWidth": 768,
+    "docHeight": 900,
+    "screenshot": "dashboard-unauthenticated-768x900.png"
+  },
+  {
+    "page": "forbidden-unauthenticated",
+    "requested": {
+      "width": 768,
+      "height": 900
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fforbidden",
+    "innerWidth": 768,
+    "innerHeight": 900,
+    "docWidth": 768,
+    "bodyWidth": 768,
+    "docHeight": 900,
+    "screenshot": "forbidden-unauthenticated-768x900.png"
+  },
+  {
+    "page": "workflow-overview",
+    "requested": {
+      "width": 768,
+      "height": 900
+    },
+    "title": "System Storage Monitor — Workflow Overview",
+    "url": "file:///C:/Users/0363/Desktop/html/storage-monitor-dashboard/workflow-overview.html",
+    "innerWidth": 768,
+    "innerHeight": 900,
+    "docWidth": 768,
+    "bodyWidth": 768,
+    "docHeight": 976,
+    "screenshot": "workflow-overview-768x900.png"
+  },
+  {
+    "page": "login",
+    "requested": {
+      "width": 1024,
+      "height": 900
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login",
+    "innerWidth": 1024,
+    "innerHeight": 900,
+    "docWidth": 1024,
+    "bodyWidth": 1024,
+    "docHeight": 900,
+    "screenshot": "login-1024x900.png"
+  },
+  {
+    "page": "dashboard-unauthenticated",
+    "requested": {
+      "width": 1024,
+      "height": 900
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fdashboard",
+    "innerWidth": 1024,
+    "innerHeight": 900,
+    "docWidth": 1024,
+    "bodyWidth": 1024,
+    "docHeight": 900,
+    "screenshot": "dashboard-unauthenticated-1024x900.png"
+  },
+  {
+    "page": "forbidden-unauthenticated",
+    "requested": {
+      "width": 1024,
+      "height": 900
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fforbidden",
+    "innerWidth": 1024,
+    "innerHeight": 900,
+    "docWidth": 1024,
+    "bodyWidth": 1024,
+    "docHeight": 900,
+    "screenshot": "forbidden-unauthenticated-1024x900.png"
+  },
+  {
+    "page": "workflow-overview",
+    "requested": {
+      "width": 1024,
+      "height": 900
+    },
+    "title": "System Storage Monitor — Workflow Overview",
+    "url": "file:///C:/Users/0363/Desktop/html/storage-monitor-dashboard/workflow-overview.html",
+    "innerWidth": 1024,
+    "innerHeight": 900,
+    "docWidth": 1009,
+    "bodyWidth": 1009,
+    "docHeight": 958,
+    "screenshot": "workflow-overview-1024x900.png"
+  },
+  {
+    "page": "login",
+    "requested": {
+      "width": 1280,
+      "height": 1000
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login",
+    "innerWidth": 1280,
+    "innerHeight": 1000,
+    "docWidth": 1280,
+    "bodyWidth": 1280,
+    "docHeight": 1000,
+    "screenshot": "login-1280x1000.png"
+  },
+  {
+    "page": "dashboard-unauthenticated",
+    "requested": {
+      "width": 1280,
+      "height": 1000
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fdashboard",
+    "innerWidth": 1280,
+    "innerHeight": 1000,
+    "docWidth": 1280,
+    "bodyWidth": 1280,
+    "docHeight": 1000,
+    "screenshot": "dashboard-unauthenticated-1280x1000.png"
+  },
+  {
+    "page": "forbidden-unauthenticated",
+    "requested": {
+      "width": 1280,
+      "height": 1000
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fforbidden",
+    "innerWidth": 1280,
+    "innerHeight": 1000,
+    "docWidth": 1280,
+    "bodyWidth": 1280,
+    "docHeight": 1000,
+    "screenshot": "forbidden-unauthenticated-1280x1000.png"
+  },
+  {
+    "page": "workflow-overview",
+    "requested": {
+      "width": 1280,
+      "height": 1000
+    },
+    "title": "System Storage Monitor — Workflow Overview",
+    "url": "file:///C:/Users/0363/Desktop/html/storage-monitor-dashboard/workflow-overview.html",
+    "innerWidth": 1280,
+    "innerHeight": 1000,
+    "docWidth": 1265,
+    "bodyWidth": 1265,
+    "docHeight": 1041,
+    "screenshot": "workflow-overview-1280x1000.png"
+  },
+  {
+    "page": "login",
+    "requested": {
+      "width": 1440,
+      "height": 1000
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login",
+    "innerWidth": 1440,
+    "innerHeight": 1000,
+    "docWidth": 1440,
+    "bodyWidth": 1440,
+    "docHeight": 1000,
+    "screenshot": "login-1440x1000.png"
+  },
+  {
+    "page": "dashboard-unauthenticated",
+    "requested": {
+      "width": 1440,
+      "height": 1000
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fdashboard",
+    "innerWidth": 1440,
+    "innerHeight": 1000,
+    "docWidth": 1440,
+    "bodyWidth": 1440,
+    "docHeight": 1000,
+    "screenshot": "dashboard-unauthenticated-1440x1000.png"
+  },
+  {
+    "page": "forbidden-unauthenticated",
+    "requested": {
+      "width": 1440,
+      "height": 1000
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fforbidden",
+    "innerWidth": 1440,
+    "innerHeight": 1000,
+    "docWidth": 1440,
+    "bodyWidth": 1440,
+    "docHeight": 1000,
+    "screenshot": "forbidden-unauthenticated-1440x1000.png"
+  },
+  {
+    "page": "workflow-overview",
+    "requested": {
+      "width": 1440,
+      "height": 1000
+    },
+    "title": "System Storage Monitor — Workflow Overview",
+    "url": "file:///C:/Users/0363/Desktop/html/storage-monitor-dashboard/workflow-overview.html",
+    "innerWidth": 1440,
+    "innerHeight": 1000,
+    "docWidth": 1425,
+    "bodyWidth": 1425,
+    "docHeight": 1147,
+    "screenshot": "workflow-overview-1440x1000.png"
+  },
+  {
+    "page": "login",
+    "requested": {
+      "width": 1920,
+      "height": 1000
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login",
+    "innerWidth": 1920,
+    "innerHeight": 1000,
+    "docWidth": 1920,
+    "bodyWidth": 1920,
+    "docHeight": 1000,
+    "screenshot": "login-1920x1000.png"
+  },
+  {
+    "page": "dashboard-unauthenticated",
+    "requested": {
+      "width": 1920,
+      "height": 1000
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fdashboard",
+    "innerWidth": 1920,
+    "innerHeight": 1000,
+    "docWidth": 1920,
+    "bodyWidth": 1920,
+    "docHeight": 1000,
+    "screenshot": "dashboard-unauthenticated-1920x1000.png"
+  },
+  {
+    "page": "forbidden-unauthenticated",
+    "requested": {
+      "width": 1920,
+      "height": 1000
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fforbidden",
+    "innerWidth": 1920,
+    "innerHeight": 1000,
+    "docWidth": 1920,
+    "bodyWidth": 1920,
+    "docHeight": 1000,
+    "screenshot": "forbidden-unauthenticated-1920x1000.png"
+  },
+  {
+    "page": "workflow-overview",
+    "requested": {
+      "width": 1920,
+      "height": 1000
+    },
+    "title": "System Storage Monitor — Workflow Overview",
+    "url": "file:///C:/Users/0363/Desktop/html/storage-monitor-dashboard/workflow-overview.html",
+    "innerWidth": 1920,
+    "innerHeight": 1000,
+    "docWidth": 1905,
+    "bodyWidth": 1905,
+    "docHeight": 1228,
+    "screenshot": "workflow-overview-1920x1000.png"
+  },
+  {
+    "page": "login",
+    "requested": {
+      "width": 667,
+      "height": 375
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login",
+    "innerWidth": 667,
+    "innerHeight": 375,
+    "docWidth": 667,
+    "bodyWidth": 667,
+    "docHeight": 754,
+    "screenshot": "login-667x375.png"
+  },
+  {
+    "page": "dashboard-unauthenticated",
+    "requested": {
+      "width": 667,
+      "height": 375
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fdashboard",
+    "innerWidth": 667,
+    "innerHeight": 375,
+    "docWidth": 667,
+    "bodyWidth": 667,
+    "docHeight": 754,
+    "screenshot": "dashboard-unauthenticated-667x375.png"
+  },
+  {
+    "page": "forbidden-unauthenticated",
+    "requested": {
+      "width": 667,
+      "height": 375
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fforbidden",
+    "innerWidth": 667,
+    "innerHeight": 375,
+    "docWidth": 667,
+    "bodyWidth": 667,
+    "docHeight": 754,
+    "screenshot": "forbidden-unauthenticated-667x375.png"
+  },
+  {
+    "page": "workflow-overview",
+    "requested": {
+      "width": 667,
+      "height": 375
+    },
+    "title": "System Storage Monitor — Workflow Overview",
+    "url": "file:///C:/Users/0363/Desktop/html/storage-monitor-dashboard/workflow-overview.html",
+    "innerWidth": 667,
+    "innerHeight": 375,
+    "docWidth": 667,
+    "bodyWidth": 667,
+    "docHeight": 846,
+    "screenshot": "workflow-overview-667x375.png"
+  },
+  {
+    "page": "login",
+    "requested": {
+      "width": 1024,
+      "height": 768
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login",
+    "innerWidth": 1024,
+    "innerHeight": 768,
+    "docWidth": 1024,
+    "bodyWidth": 1024,
+    "docHeight": 768,
+    "screenshot": "login-1024x768.png"
+  },
+  {
+    "page": "dashboard-unauthenticated",
+    "requested": {
+      "width": 1024,
+      "height": 768
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fdashboard",
+    "innerWidth": 1024,
+    "innerHeight": 768,
+    "docWidth": 1024,
+    "bodyWidth": 1024,
+    "docHeight": 768,
+    "screenshot": "dashboard-unauthenticated-1024x768.png"
+  },
+  {
+    "page": "forbidden-unauthenticated",
+    "requested": {
+      "width": 1024,
+      "height": 768
+    },
+    "title": "Storage Monitor",
+    "url": "http://localhost:4200/login?returnUrl=%2Fforbidden",
+    "innerWidth": 1024,
+    "innerHeight": 768,
+    "docWidth": 1024,
+    "bodyWidth": 1024,
+    "docHeight": 768,
+    "screenshot": "forbidden-unauthenticated-1024x768.png"
+  },
+  {
+    "page": "workflow-overview",
+    "requested": {
+      "width": 1024,
+      "height": 768
+    },
+    "title": "System Storage Monitor — Workflow Overview",
+    "url": "file:///C:/Users/0363/Desktop/html/storage-monitor-dashboard/workflow-overview.html",
+    "innerWidth": 1024,
+    "innerHeight": 768,
+    "docWidth": 1009,
+    "bodyWidth": 1009,
+    "docHeight": 958,
+    "screenshot": "workflow-overview-1024x768.png"
+  }
+]

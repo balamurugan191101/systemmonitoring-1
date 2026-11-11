@@ -1,0 +1,250 @@
+@use '../../breakpoints' as bp;
+
+:host {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text: #1c2430;
+  --muted: #5d6877;
+  --line: #e3e7ed;
+  --accent: #2457d6;
+  --danger-bg: #fdecec;
+  --danger: #a12626;
+  display: block;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :host {
+    --bg: #12161c;
+    --surface: #1a2029;
+    --text: #e6eaf0;
+    --muted: #9aa5b4;
+    --line: #2a323e;
+    --accent: #7ea2ff;
+    --danger-bg: #3a1d1d;
+    --danger: #ffb4b4;
+  }
+}
+
+.page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 24px clamp(16px, 2vw, 36px) 40px;
+}
+
+.top, .account { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.account { color: var(--muted); font-size: .85rem; }
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.sub {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.error {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.card .label {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.card .value {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.drives {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.drive .bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.drive .fill {
+  height: 100%;
+  background: var(--accent);
+}
+
+.drive .fill.high {
+  background: var(--danger);
+}
+
+.drive .detail {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+input,
+select {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  min-width: 140px;
+}
+
+button.ghost {
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+button.ghost:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+th button {
+  all: unset;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+th button:hover,
+th button:focus-visible {
+  color: var(--accent);
+}
+
+.num {
+  text-align: right;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.mono {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.85rem;
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 28px;
+}
+
+.pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+:host :focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent), transparent 35%);
+  outline-offset: 2px;
+}
+
+@include bp.mobile {
+  .page { padding: 18px 16px 28px; }
+  .top, .account { align-items: flex-start; flex-wrap: wrap; }
+  .account { font-size: 14px; }
+  .filters { align-items: stretch; }
+  .filters label { flex: 1 1 180px; min-width: 0; font-size: 14px; }
+  input, select { min-width: 0; width: 100%; min-height: var(--tap-target-size); font-size: 16px; }
+  button.ghost { min-height: var(--tap-target-size); }
+  th button { min-height: var(--tap-target-size); }
+  .card .label, .drive .detail { font-size: 14px; }
+  .mono { font-size: 14px; }
+}
+
+@include bp.small {
+  .page { padding-inline: 12px; }
+  .cards, .drives { grid-template-columns: 1fr; }
+  .filters label { flex-basis: 100%; }
+  .pager { flex-wrap: wrap; gap: 8px 14px; }
+  th, td { padding: 9px 11px; }
+}
+

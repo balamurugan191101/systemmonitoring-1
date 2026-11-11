@@ -1,0 +1,79 @@
+2026-10-30 06:56:26.144: [INFO][Sync] Reset engine, reason: 8
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Bookmarks
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Preferences
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Passwords
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Autofill Profiles
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Autofill
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Extensions
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Sessions
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Extension settings
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: History Delete Directives
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Device Info
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: User Consents
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Send Tab To Self
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Web Apps
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: History
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Saved Tab Group
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: WebAuthn Credentials
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Edge Hub App Usage
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Edge Journey
+2026-10-30 06:56:26.144: [INFO][Sync] Stopped: Edge Workspace
+2026-10-30 06:56:26.144: [INFO][Sync] SyncState after authenticated was: NotSignedIn
+2026-10-30 06:56:26.398: [INFO][Sync] Reset engine, reason: 8
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Bookmarks
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Preferences
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Passwords
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Autofill Profiles
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Autofill
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Extensions
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Sessions
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Extension settings
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: History Delete Directives
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Device Info
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: User Consents
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Send Tab To Self
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Web Apps
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: History
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Saved Tab Group
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: WebAuthn Credentials
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Edge Hub App Usage
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Edge Journey
+2026-10-30 06:56:26.398: [INFO][Sync] Stopped: Edge Workspace
+2026-10-30 06:56:31.709: [INFO][Sync] Try to start sync engine
+2026-10-30 06:56:31.716: [INFO][SyncManagerImpl::NudgeForInitialDownload] Initial download nudge for Encryption Keys
+2026-10-30 06:56:31.716: [INFO][SyncEngineBackend::LoadAndConnectNigoriController] Load and connect Nigori controller
+2026-10-30 06:56:31.716: [INFO][SyncEngineBackend::DoInitialize] Control Types added: Encryption Keys
+2026-10-30 06:56:31.716: [INFO][SyncManagerImpl::ConfigureSyncer] Types to download: Encryption Keys with reason: 3
+2026-10-30 06:56:31.718: [INFO][SyncSchedulerImpl::DoConfigurationSyncCycleJob] Configure job was blocked
+2026-10-30 06:56:31.746: [INFO][SyncAuthManager::SetLastAuthError] Current auth error: None
+2026-10-30 06:56:31.746: [INFO][SyncAuthManager::EdgeLogTokenErrorState] Token error with: None for account type: AAD
+2026-10-30 06:56:31.746: [INFO][Sync] Credentials changed for: EdgeSyncKeyDataScope
+2026-10-30 06:56:31.746: [INFO][SyncEngineBackend::DoUpdateKeyDataCredentials] Update key data credentials
+2026-10-30 06:56:31.761: [INFO][SyncAuthManager::SetLastAuthError] Current auth error: None
+2026-10-30 06:56:31.761: [INFO][SyncAuthManager::EdgeLogTokenErrorState] Token error with: None for account type: AAD
+2026-10-30 06:56:31.761: [INFO][Sync] Credentials changed for: EdgeSyncScopeNew
+2026-10-30 06:56:31.761: [INFO][SyncEngineBackend::DoUpdateCredentials] Update credentials
+2026-10-30 06:56:31.761: [INFO][SyncSchedulerImpl::DoConfigurationSyncCycleJob] Blocked types:  and types to download: Encryption Keys
+2026-10-30 06:56:32.558: [INFO][SyncSchedulerImpl::DoConfigurationSyncCycleJob] Syncer error: Success
+2026-10-30 06:56:32.558: [INFO][SyncEngineBackend::DoUpdateKeyDataCredentials] Update key data credentials
+2026-10-30 06:57:17.570: [INFO][SyncSchedulerImpl::DoConfigurationSyncCycleJob] Blocked types:  and types to download: Encryption Keys
+2026-10-30 06:57:18.073: [INFO][SyncSchedulerImpl::DoConfigurationSyncCycleJob] Syncer error: Success
+2026-10-30 06:58:59.666: [INFO][Sync] SyncState after authenticated was: FeatureCanStart
+2026-10-30 06:58:59.770: [INFO][Sync] Try to start sync engine
+2026-10-30 06:58:59.809: [INFO][SyncManagerImpl::NudgeForInitialDownload] Initial download nudge for Encryption Keys
+2026-10-30 06:58:59.809: [INFO][SyncEngineBackend::LoadAndConnectNigoriController] Load and connect Nigori controller
+2026-10-30 06:58:59.809: [INFO][SyncEngineBackend::DoInitialize] Control Types added: Encryption Keys
+2026-10-30 06:58:59.809: [INFO][SyncManagerImpl::ConfigureSyncer] Types to download: Encryption Keys with reason: 3
+2026-10-30 06:58:59.810: [INFO][SyncSchedulerImpl::DoConfigurationSyncCycleJob] Configure job was blocked
+2026-10-30 06:59:00.002: [INFO][SyncAuthManager::SetLastAuthError] Current auth error: None
+2026-10-30 06:59:00.002: [INFO][SyncAuthManager::EdgeLogTokenErrorState] Token error with: None for account type: AAD
+2026-10-30 06:59:00.002: [INFO][Sync] Credentials changed for: EdgeSyncScopeNew
+2026-10-30 06:59:00.014: [INFO][SyncAuthManager::SetLastAuthError] Current auth error: None
+2026-10-30 06:59:00.014: [INFO][SyncAuthManager::EdgeLogTokenErrorState] Token error with: None for account type: AAD
+2026-10-30 06:59:00.014: [INFO][Sync] Credentials changed for: EdgeSyncKeyDataScope
+2026-10-30 06:59:00.014: [INFO][SyncEngineBackend::DoUpdateKeyDataCredentials] Update key data credentials
+2026-10-30 06:59:00.014: [INFO][SyncEngineBackend::DoUpdateCredentials] Update credentials
+2026-10-30 06:59:00.014: [INFO][SyncSchedulerImpl::DoConfigurationSyncCycleJob] Blocked types:  and types to download: Encryption Keys
+2026-10-30 06:59:01.252: [INFO][SyncSchedulerImpl::DoConfigurationSyncCycleJob] Syncer error: Success
+2026-10-30 07:00:16.258: [INFO][SyncSchedulerImpl::DoConfigurationSyncCycleJob] Blocked types:  and types to download: Encryption Keys
+2026-10-30 07:00:16.829: [INFO][SyncSchedulerImpl::DoConfigurationSyncCycleJob] Syncer error: Success

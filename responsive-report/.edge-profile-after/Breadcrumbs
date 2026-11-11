@@ -1,0 +1,119 @@
+0:01:30 Tab4 FinishNav44
+0:01:30 Tab4 StartNav45 #renderer-script #link
+0:01:30 Tab4 FinishNav45
+0:01:30 Tab4 PageLoad
+0:01:32 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:01:32 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:01:35 Tab4 StartNav46 #typed
+0:01:35 Tab4 FinishNav46
+0:01:35 Tab4 PageLoad
+0:01:36 Tab4 StartNav47 #renderer-script #link
+0:01:36 Tab4 FinishNav47
+0:01:36 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:01:36 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:01:39 Tab4 StartNav48 #typed
+0:01:39 Tab4 FinishNav48
+0:01:39 Tab4 PageLoad
+0:01:41 Tab4 StartNav49 #renderer-script #link
+0:01:41 Tab4 FinishNav49
+0:01:41 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:01:41 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:01:44 Tab4 StartNav50 #typed
+0:01:44 Tab4 FinishNav50
+0:01:44 Tab4 PageLoad
+0:01:45 Tab4 StartNav51 #typed
+0:01:45 Tab4 FinishNav51
+0:01:45 Tab4 StartNav52 #renderer-script #link
+0:01:45 Tab4 FinishNav52
+0:01:45 Tab4 PageLoad
+0:01:47 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:01:47 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:01:50 Tab4 StartNav53 #typed
+0:01:50 Tab4 FinishNav53
+0:01:50 Tab4 PageLoad
+0:01:52 Tab4 StartNav54 #renderer-script #link
+0:01:52 Tab4 FinishNav54
+0:01:52 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:01:52 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:01:54 Tab4 StartNav55 #typed
+0:01:54 Tab4 FinishNav55
+0:01:54 Tab4 PageLoad
+0:01:56 Tab4 StartNav56 #renderer-script #link
+0:01:56 Tab4 FinishNav56
+0:01:56 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:01:56 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:01:59 Tab4 StartNav57 #typed
+0:01:59 Tab4 FinishNav57
+0:01:59 Tab4 PageLoad
+0:02:00 Tab4 StartNav58 #typed
+0:02:00 Tab4 FinishNav58
+0:02:01 Tab4 StartNav59 #renderer-script #link
+0:02:01 Tab4 FinishNav59
+0:02:01 Tab4 PageLoad
+0:02:03 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:03 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:05 Tab4 StartNav60 #typed
+0:02:05 Tab4 FinishNav60
+0:02:05 Tab4 PageLoad
+0:02:06 Tab4 StartNav61 #renderer-script #link
+0:02:06 Tab4 FinishNav61
+0:02:07 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:07 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:10 Tab4 StartNav62 #typed
+0:02:10 Tab4 FinishNav62
+0:02:10 Tab4 PageLoad
+0:02:11 Tab4 StartNav63 #renderer-script #link
+0:02:11 Tab4 FinishNav63
+0:02:11 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:11 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:15 Tab4 StartNav64 #typed
+0:02:15 Tab4 FinishNav64
+0:02:15 Tab4 PageLoad
+0:02:15 Tab4 StartNav65 #typed
+0:02:15 Tab4 FinishNav65
+0:02:16 Tab4 StartNav66 #renderer-script #link
+0:02:16 Tab4 FinishNav66
+0:02:16 Tab4 PageLoad
+0:02:17 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:17 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:20 Tab4 StartNav67 #typed
+0:02:20 Tab4 FinishNav67
+0:02:20 Tab4 PageLoad
+0:02:24 Tab4 StartNav68 #renderer-script #link
+0:02:24 Tab4 FinishNav68
+0:02:24 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:24 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:24 Tab4 StartNav69 #typed
+0:02:24 Tab4 FinishNav69
+0:02:25 Tab4 PageLoad
+0:02:26 Tab4 StartNav70 #renderer-script #link
+0:02:26 Tab4 FinishNav70
+0:02:26 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:26 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:29 Tab4 StartNav71 #typed
+0:02:29 Tab4 FinishNav71
+0:02:29 Tab4 PageLoad
+0:02:30 Tab4 StartNav72 #typed
+0:02:30 Tab4 FinishNav72
+0:02:30 Tab4 StartNav73 #renderer-script #link
+0:02:30 Tab4 FinishNav73
+0:02:30 Tab4 PageLoad
+0:02:31 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:31 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:35 Tab4 StartNav74 #typed
+0:02:35 Tab4 FinishNav74
+0:02:35 Tab4 PageLoad
+0:02:37 Tab4 StartNav75 #renderer-script #link
+0:02:37 Tab4 FinishNav75
+0:02:37 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:37 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:39 Tab4 StartNav76 #typed
+0:02:40 Tab4 FinishNav76
+0:02:40 Tab4 PageLoad
+0:02:41 Tab4 StartNav77 #renderer-script #link
+0:02:41 Tab4 FinishNav77
+0:02:41 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:41 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:02:44 Tab4 StartNav78 #typed
+0:02:44 Tab4 FinishNav78
+0:02:44 Tab4 PageLoad

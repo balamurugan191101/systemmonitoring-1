@@ -1,0 +1,6 @@
+2026/10/30-12:29:05.534 7bfc Reusing MANIFEST C:\Users\0363\Desktop\html\storage-monitor-dashboard\responsive-report\.edge-profile-after\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/10/30-12:29:05.545 7bfc Recovering log #4
+2026/10/30-12:29:05.545 7bfc Reusing old log C:\Users\0363\Desktop\html\storage-monitor-dashboard\responsive-report\.edge-profile-after\Default\EdgeCoupons/coupons_data.db/000004.log 
+2026/10/30-12:29:05.611 7f24 Level-0 table #8: started
+2026/10/30-12:29:05.622 7f24 Level-0 table #8: 683376 bytes OK
+2026/10/30-12:29:05.624 7f24 Delete type=0 #4

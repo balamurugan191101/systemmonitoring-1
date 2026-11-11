@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>System Storage Monitor — Workflow Overview</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, "Segoe UI", Arial, sans-serif; background:#071426; color:#eaf6ff; --tap-target-size:44px; }
+    * { box-sizing:border-box }
+    body { margin:0; padding:24px; }
+    header { max-width:1500px; margin:0 auto 18px; display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap }
+    h1 { margin:0; font-size:clamp(22px,3vw,34px); letter-spacing:-.03em }
+    p { margin:8px 0 0; color:#9cb2c5; font-size:14px }
+    nav { display:flex; flex-wrap:wrap; gap:8px; align-items:center }
+    button, a { color:#dff8ff; background:#102940; border:1px solid #34536c; border-radius:7px; padding:8px 11px; font:inherit; font-size:13px; text-decoration:none; cursor:pointer }
+    button:hover, a:hover { background:#173c56 }
+    button:focus-visible, a:focus-visible, input:focus-visible { outline:3px solid #35cce9; outline-offset:2px }
+    label { color:#b9cede; font-size:12px; display:flex; gap:8px; align-items:center }
+    input[type=range] { width:120px }
+    .frame { max-width:1500px; margin:auto; overflow:auto; border:1px solid #24445c; border-radius:12px; background:#0a1a2b; }
+    #diagram { display:block; width:100%; min-width:1050px; height:auto; }
+    .hint { max-width:1500px; margin:12px auto; color:#829bb0; font-size:12px }
+    .mobile-overview { display:none; max-width:720px; margin:auto; }
+    .mobile-overview ol { list-style:none; margin:0; padding:0; display:grid; gap:12px; counter-reset:stage; }
+    .mobile-overview li { counter-increment:stage; padding:16px; border:1px solid #24445c; border-radius:10px; background:#0d2033; line-height:1.55; }
+    .mobile-overview li::before { content:counter(stage) ". "; color:#35cce9; font-weight:700; }
+    .mobile-overview strong { color:#eaf6ff; }
+    button:focus-visible, a:focus-visible, input:focus-visible { outline:3px solid #35cce9; outline-offset:2px }
+    @media (max-width:760px) {
+      body { padding:16px; }
+      header { align-items:flex-start; gap:16px; }
+      header > div { min-width:0; }
+      header p { line-height:1.5; }
+      nav { width:100%; }
+      button, a { min-height:var(--tap-target-size); display:inline-flex; align-items:center; justify-content:center; }
+      nav label { min-height:var(--tap-target-size); font-size:14px; }
+      input[type=range] { width:min(34vw,150px); min-height:var(--tap-target-size); }
+      .frame { display:none; }
+      .mobile-overview { display:block; }
+      .hint { line-height:1.5; }
+    }
+    @media (max-width:480px) {
+      body { padding:12px; }
+      nav { gap:8px; }
+      nav > * { flex:1 1 calc(50% - 8px); }
+      nav label { flex-basis:100%; justify-content:center; }
+      .mobile-overview li { padding:14px; }
+    }
+    @media print { body{background:white;color:#111;padding:0} header nav,.hint,.mobile-overview{display:none}.frame{display:block;border:0;overflow:visible}#diagram{min-width:0;width:100%} }
+  </style>
+</head>
+<body>
+  <header>
+    <div><h1>System Storage Monitor</h1><p>End-to-end workflow overview · implementation-based · detailed Mermaid flows and step table in <strong>WORKFLOW.md</strong></p></div>
+    <nav aria-label="Diagram controls">
+      <label>Zoom <input id="zoom" type="range" min="70" max="180" value="100"><span id="zoomValue">100%</span></label>
+      <button id="reset" type="button">Reset zoom</button>
+      <button id="saveSvg" type="button">Download SVG</button>
+      <button id="savePng" type="button">Download PNG</button>
+      <button type="button" onclick="window.print()">Print / Save PDF</button>
+      <a href="WORKFLOW.md">Detailed workflow</a>
+    </nav>
+  </header>
+  <div class="frame"><svg id="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1060" role="img" aria-labelledby="title desc">
+    <title id="title">System Storage Monitor end-to-end workflow</title>
+    <desc id="desc">Swimlane diagram for startup, authentication and authorization, file monitoring, dashboard polling, and optional daily email reports.</desc>
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#91abc0"/></marker>
+      <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#22c55e"/></marker>
+      <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ef4444"/></marker>
+      <style>
+        .lane{fill:#0d2033;stroke:#23415a;stroke-width:1}.laneTitle{fill:#8fb0c9;font:700 14px 'Segoe UI',Arial,sans-serif;letter-spacing:1.4px}.node{stroke-width:2}.blue{fill:#dbeafe;stroke:#3b82f6}.green{fill:#dcfce7;stroke:#22c55e}.amber{fill:#fef3c7;stroke:#f59e0b}.red{fill:#fee2e2;stroke:#ef4444}.neutral{fill:#102940;stroke:#4b6d88}.label{fill:#13263b;font:600 14px 'Segoe UI',Arial,sans-serif;text-anchor:middle}.labelLight{fill:#e6f3fc;font:600 14px 'Segoe UI',Arial,sans-serif;text-anchor:middle}.small{font-size:12px;font-weight:500}.edge{fill:none;stroke:#91abc0;stroke-width:2;marker-end:url(#arrow)}.edgeGreen{fill:none;stroke:#22c55e;stroke-width:2.4;marker-end:url(#arrowGreen)}.edgeRed{fill:none;stroke:#ef4444;stroke-width:2.4;marker-end:url(#arrowRed)}.edgeText{fill:#b8ccdc;font:12px 'Segoe UI',Arial,sans-serif}.legend{font:12px 'Segoe UI',Arial,sans-serif;fill:#c6d6e2}
+      </style>
+    </defs>
+    <rect width="1600" height="1060" fill="#071426"/>
+    <text x="42" y="43" fill="#35cce9" font-size="12" font-weight="700" letter-spacing="2">STORAGE MONITOR · WORKFLOW MAP</text>
+    <text x="42" y="75" fill="#eaf6ff" font-size="25" font-weight="700">From startup to live dashboard and daily snapshot</text>
+    <text x="42" y="101" fill="#9cb2c5" font-size="13">User roles: Super Admin · Admin · IT Engineer · Viewer — data access is enforced by the API.</text>
+    <!-- Swimlanes -->
+    <rect class="lane" x="20" y="125" width="1560" height="145" rx="10"/><text class="laneTitle" x="42" y="151">OPERATOR / WINDOWS HOST</text>
+    <rect class="lane" x="20" y="285" width="1560" height="180" rx="10"/><text class="laneTitle" x="42" y="311">NODE API + POSTGRESQL</text>
+    <rect class="lane" x="20" y="480" width="1560" height="160" rx="10"/><text class="laneTitle" x="42" y="506">PYTHON WATCHDOG / WINDOWS FILESYSTEM</text>
+    <rect class="lane" x="20" y="655" width="1560" height="170" rx="10"/><text class="laneTitle" x="42" y="681">ANGULAR BROWSER DASHBOARD</text>
+    <rect class="lane" x="20" y="840" width="1560" height="185" rx="10"/><text class="laneTitle" x="42" y="866">OPTIONAL WINDOWS TASK SCHEDULER / EDGE / SMTP</text>
+
+    <!-- Connectors behind nodes -->
+    <path class="edge" d="M205 210H265"/><path class="edge" d="M475 210H545"/>
+    <path class="edge" d="M650 235V330H735"/><path class="edge" d="M650 235V535H735"/><path class="edge" d="M650 235V725H735"/>
+    <path class="edge" d="M920 365H985"/><path class="edgeRed" d="M850 402V440H1000"/>
+    <path class="edge" d="M1095 383H1170"/><path class="edge" d="M1270 420V535H1370"/>
+    <path class="edge" d="M920 555H1010"/><path class="edge" d="M1155 555H1240"/>
+    <path class="edge" d="M920 740H995"/><path class="edge" d="M1190 740H1260"/>
+    <path class="edge" d="M1290 660V610H1120V575"/><path class="edge" d="M1390 750V900H1300"/>
+    <path class="edge" d="M1400 905H1460"/><path class="edgeGreen" d="M1455 950V980H1370"/><path class="edgeRed" d="M1510 934V980H1515"/>
+    <path class="edge" d="M1415 540V350H1370"/>
+
+    <!-- Operator nodes -->
+    <rect class="node green" x="75" y="178" width="130" height="62" rx="31"/><text class="label" x="140" y="204"><tspan>1 Start</tspan><tspan x="140" dy="19">services</tspan></text>
+    <polygon class="node neutral" points="370,172 475,209 370,246 265,209"/><text class="labelLight small" x="370" y="204"><tspan>1.1 Configure</tspan><tspan x="370" dy="16">.env + command</tspan></text>
+    <rect class="node blue" x="545" y="178" width="210" height="62" rx="8"/><text class="label" x="650" y="202"><tspan>1.2 start:all</tspan><tspan x="650" dy="19">launches 3 services</tspan></text>
+
+    <!-- API / DB nodes -->
+    <rect class="node blue" x="735" y="340" width="185" height="62" rx="8"/><text class="label" x="827" y="364"><tspan>1.3 API connects</tspan><tspan x="827" dy="19">to PostgreSQL over TLS</tspan></text>
+    <polygon class="node amber" points="1040,332 1100,370 1040,408 980,370"/><text class="label small" x="1040" y="374"><tspan>DB ready?</tspan></text>
+    <rect class="node green" x="1170" y="340" width="190" height="62" rx="8"/><text class="label" x="1265" y="364"><tspan>Auth + session</tspan><tspan x="1265" dy="19">in PostgreSQL</tspan></text>
+    <rect class="node red" x="1000" y="422" width="185" height="34" rx="17"/><text class="label small" x="1092" y="444">1.4 API startup fails</text>
+    <text class="edgeText" x="1110" y="360">Yes</text><text class="edgeText" x="864" y="438">No</text>
+    <rect class="node blue" x="1370" y="330" width="170" height="82" rx="8"/><text class="label" x="1455" y="353"><tspan>2 Login + guards</tspan><tspan x="1455" dy="18">role + local grant</tspan><tspan x="1455" dy="18">CSRF + rate limits</tspan></text>
+
+    <!-- Watcher nodes -->
+    <rect class="node blue" x="735" y="525" width="185" height="62" rx="8"/><text class="label" x="827" y="549"><tspan>3.1 Watch roots</tspan><tspan x="827" dy="19">recursively</tspan></text>
+    <polygon class="node amber" points="1080,517 1155,556 1080,595 1005,556"/><text class="label small" x="1080" y="552"><tspan>Eligible file?</tspan><tspan x="1080" dy="15">not ignored/temp</tspan></text>
+    <rect class="node blue" x="1240" y="525" width="185" height="62" rx="8"/><text class="label" x="1332" y="549"><tspan>3.2 TIMER 1 second</tspan><tspan x="1332" dy="19">then collect metadata</tspan></text>
+    <rect class="node green" x="1370" y="600" width="170" height="32" rx="16"/><text class="label small" x="1455" y="621">3.3 Append JSONL</text>
+    <text class="edgeText" x="1170" y="548">Yes</text><text class="edgeText" x="1080" y="620">No: skip</text>
+
+    <!-- Browser nodes -->
+    <rect class="node blue" x="735" y="710" width="185" height="62" rx="8"/><text class="label" x="827" y="734"><tspan>3.4 TIMER 5 seconds</tspan><tspan x="827" dy="19">poll files + drives</tspan></text>
+    <rect class="node blue" x="995" y="710" width="195" height="62" rx="8"/><text class="label" x="1092" y="734"><tspan>3.5 API checks session</tspan><tspan x="1092" dy="19">and computer grant</tspan></text>
+    <polygon class="node amber" points="1290,700 1360,741 1290,782 1220,741"/><text class="label small" x="1290" y="737"><tspan>Authorized</tspan><tspan x="1290" dy="15">and API OK?</tspan></text>
+    <rect class="node green" x="1400" y="700" width="145" height="62" rx="8"/><text class="label small" x="1472" y="725"><tspan>3.6 Display</tspan><tspan x="1472" dy="17">dashboard data</tspan></text>
+    <rect class="node red" x="1210" y="790" width="200" height="27" rx="13"/><text class="label small" x="1310" y="809">401 / 403 / show error, retry</text>
+
+    <!-- Report lane -->
+    <rect class="node amber" x="760" y="885" width="230" height="58" rx="8"/><text class="label" x="875" y="909"><tspan>5.1 Optional task</tspan><tspan x="875" dy="18">daily at 09:00 local time</tspan></text>
+    <rect class="node blue" x="1040" y="885" width="220" height="58" rx="8"/><text class="label" x="1150" y="909"><tspan>5.2 Read drives +</tspan><tspan x="1150" dy="18">Edge captures PNG</tspan></text>
+    <polygon class="node amber" points="1355,876 1425,914 1355,952 1285,914"/><text class="label small" x="1355" y="918">Preview?</text>
+    <rect class="node green" x="1400" y="965" width="145" height="36" rx="18"/><text class="label small" x="1472" y="988">5.3 Save PNG</text>
+    <rect class="node blue" x="1115" y="965" width="190" height="36" rx="18"/><text class="label small" x="1210" y="988">5.4 Send SMTP email</text>
+    <rect class="node green" x="870" y="965" width="170" height="36" rx="18"/><text class="label small" x="955" y="988">5.5 Delivered</text>
+    <rect class="node red" x="1480" y="965" width="90" height="36" rx="18"/><text class="label small" x="1525" y="988">Failed</text>
+    <text class="edgeText" x="1435" y="906">Yes</text><text class="edgeText" x="1320" y="970">No</text>
+
+    <!-- Legend -->
+    <g transform="translate(42 1038)"><rect class="node green" width="18" height="14" rx="3"/><text class="legend" x="26" y="12">Success</text><rect class="node red" x="105" width="18" height="14" rx="3"/><text class="legend" x="131" y="12">Failure / rejection</text><rect class="node amber" x="265" width="18" height="14" rx="3"/><text class="legend" x="291" y="12">Decision / timer</text><rect class="node blue" x="410" width="18" height="14" rx="3"/><text class="legend" x="436" y="12">System action</text><text class="legend" x="620" y="12">Detailed steps, roles, conditions, and assumptions: WORKFLOW.md</text></g>
+  </svg></div>
+  <section class="mobile-overview" aria-label="Workflow summary for small screens">
+    <ol>
+      <li><strong>Start the services.</strong> Configure the environment, start the Node API, PostgreSQL, and Python watcher. If the database is unavailable, API startup fails; fix the connection and restart.</li>
+      <li><strong>Sign in and authorize.</strong> The API validates the account, session, role, and computer access. Missing or invalid access returns 401 or 403; sign in again or ask an administrator to grant access.</li>
+      <li><strong>Watch storage.</strong> The Python watcher observes configured roots, ignores temporary files, waits for stable file metadata, then appends events to JSONL.</li>
+      <li><strong>Refresh the dashboard.</strong> The browser polls the API every five seconds and displays authorized drive and file data. API errors appear in the dashboard and polling retries.</li>
+      <li><strong>Optional daily report.</strong> A Windows scheduled task runs at 9:00 AM local time, captures the drive view, and emails it through SMTP. Preview saves locally; capture or SMTP failures are reported by the task.</li>
+    </ol>
+  </section>
+  <div class="hint">On narrow screens, this concise workflow summary replaces the wide swimlane diagram. Use Download SVG for the complete zoomable diagram. “Print / Save PDF” opens your browser’s print dialog.</div>
+  <script>
+    const svg = document.getElementById('diagram');
+    const zoom = document.getElementById('zoom');
+    const zoomValue = document.getElementById('zoomValue');
+    const applyZoom = () => { svg.style.width = `${zoom.value}%`; zoomValue.textContent = `${zoom.value}%`; };
+    zoom.addEventListener('input', applyZoom);
+    document.getElementById('reset').addEventListener('click', () => { zoom.value = '100'; applyZoom(); });
+    document.getElementById('saveSvg').addEventListener('click', () => {
+      const copy = svg.cloneNode(true);
+      copy.setAttribute('width', '1600'); copy.setAttribute('height', '1060');
+      const blob = new Blob([new XMLSerializer().serializeToString(copy)], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'storage-monitor-workflow.svg'; a.click(); URL.revokeObjectURL(url);
+    });
+    document.getElementById('savePng').addEventListener('click', () => {
+      const copy = svg.cloneNode(true); copy.setAttribute('width', '2400'); copy.setAttribute('height', '1590');
+      const source = URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(copy)], { type: 'image/svg+xml;charset=utf-8' }));
+      const image = new Image(); image.onload = () => { const canvas = document.createElement('canvas'); canvas.width = 2400; canvas.height = 1590; canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height); URL.revokeObjectURL(source); canvas.toBlob((blob) => { const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'storage-monitor-workflow.png'; a.click(); URL.revokeObjectURL(url); }, 'image/png'); }; image.src = source;
+    });
+  </script>
+</body>
+</html>

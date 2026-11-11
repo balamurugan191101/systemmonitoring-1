@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+:root { --tap-target-size: 44px; }
+
+.notice {
+  padding: 11px 13px;
+  margin: 0 0 18px;
+  border: 1px solid #a7dff0;
+  border-radius: 7px;
+  background: #effaff;
+  color: #156783;
+  font-size: 13px;
+}

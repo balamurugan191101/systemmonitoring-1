@@ -1,0 +1,15 @@
+2026-10-30 06:48:32.923: [INFO] CurrentProfilePath: C:\Users\0363\Desktop\html\storage-monitor-dashboard\responsive-report\.edge-profile-before\Default
+2026-10-30 06:48:32.923: [INFO] Profiles total count: 1
+2026-10-30 06:48:32.923: [INFO] Profile: name=Profile 1 path=C:\Users\0363\Desktop\html\storage-monitor-dashboard\responsive-report\.edge-profile-before\Default lastActive=null
+2026-10-30 06:48:32.923: [INFO] LastUsedProfileDir: C:\Users\0363\Desktop\html\storage-monitor-dashboard\responsive-report\.edge-profile-before\Default
+2026-10-30 06:48:32.923: [INFO] VisibilityChanged: 0
+2026-10-30 06:48:32.958: [INFO] OnDoneLoading sync enabled: 0
+2026-10-30 06:48:32.958: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-30 06:48:32.958: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-30 06:48:32.958: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-30 06:48:32.995: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-30 06:48:39.552: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-30 06:48:39.556: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-30 06:48:39.561: [INFO] Primary account changed.
+2026-10-30 06:48:39.561: [INFO] OnPrimaryAccountChanged PrimaryAccountChangeEvent::Type::kSet
+2026-10-30 06:48:39.589: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3

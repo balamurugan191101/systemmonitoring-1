@@ -1,0 +1,5 @@
+2026/10/30-12:26:32.454 7e9c Creating DB C:\Users\0363\Desktop\html\storage-monitor-dashboard\responsive-report\.edge-profile-after\Default\EdgeCoupons/coupons_data.db since it was missing.
+2026/10/30-12:26:32.498 7e9c Reusing MANIFEST C:\Users\0363\Desktop\html\storage-monitor-dashboard\responsive-report\.edge-profile-after\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/10/30-12:26:32.655 7d58 Level-0 table #5: started
+2026/10/30-12:26:32.662 7d58 Level-0 table #5: 683273 bytes OK
+2026/10/30-12:26:32.663 7d58 Delete type=0 #3

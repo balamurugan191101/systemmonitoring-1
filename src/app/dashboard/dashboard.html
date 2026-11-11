@@ -1,0 +1,122 @@
+<main class="page">
+  <header class="top">
+    <div>
+      <h1>Storage Monitor</h1>
+      <p class="sub">
+        Files added to the watched folders
+        @if (lastRefresh()) {
+          · updated {{ lastRefresh()!.toLocaleTimeString() }}
+        }
+      </p>
+    </div>
+    <div class="account"><span>{{ auth.user()?.username }} · {{ auth.user()?.role }}</span><button type="button" class="ghost" (click)="logout()">Sign out</button></div>
+  </header>
+
+  @if (error()) {
+    <div class="error" role="alert">{{ error() }}</div>
+  }
+
+  <section class="drives" aria-label="Drives">
+    @for (d of drives(); track d.drive) {
+       <div class="card drive">
+      <span class="label">{{ d.name }}</span>
+      <span class="value">{{ formatBytes(d.total) }}</span>
+      <div class="bar" role="progressbar" [attr.aria-valuenow]="usedPercent(d)" aria-valuemin="0" aria-valuemax="100">
+        <div class="fill" [class.high]="usedPercent(d) >= 90" [style.width.%]="usedPercent(d)"></div>
+      </div>
+      <span class="detail">{{ d.type }}@if (d.fileSystem) { · {{ d.fileSystem }} }</span>
+      <span class="detail">{{ formatBytes(d.used) }} used · {{ formatBytes(d.free) }} free ({{ usedPercent(d) }}% used)</span>
+    </div>
+    }
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <span class="label">Files</span>
+      <span class="value">{{ filtered().length }}</span>
+    </div>
+    <div class="card">
+      <span class="label">Size of logged files</span>
+      <span class="value">{{ formatBytes(totalBytes()) }}</span>
+    </div>
+    <div class="card">
+      <span class="label">Owners</span>
+      <span class="value">{{ owners().length }}</span>
+    </div>
+    <div class="card">
+      <span class="label">Subfolders</span>
+      <span class="value">{{ subfolders().length }}</span>
+    </div>
+  </section>
+
+  <section class="filters">
+    <label>
+      Search
+      <input type="search" placeholder="File, subfolder or owner" [value]="search()" (input)="onFilter(search, $event)" />
+    </label>
+    <label>
+      Owner
+      <select [value]="owner()" (change)="onFilter(owner, $event)">
+        <option value="">All</option>
+        @for (o of owners(); track o) {
+          <option [value]="o">{{ o }}</option>
+        }
+      </select>
+    </label>
+    <label>
+      Subfolder
+      <select [value]="subfolder()" (change)="onFilter(subfolder, $event)">
+        <option value="">All</option>
+        @for (s of subfolders(); track s) {
+          <option [value]="s">{{ s }}</option>
+        }
+      </select>
+    </label>
+    <label>
+      Created from
+      <input type="date" [value]="dateFrom()" (input)="onFilter(dateFrom, $event)" />
+    </label>
+    <label>
+      Created to
+      <input type="date" [value]="dateTo()" (input)="onFilter(dateTo, $event)" />
+    </label>
+    <button type="button" class="ghost" (click)="clearFilters()">Clear</button>
+  </section>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th><button type="button" (click)="setSort('file_name')">File {{ arrow('file_name') }}</button></th>
+          <th><button type="button" (click)="setSort('subfolder')">Subfolder {{ arrow('subfolder') }}</button></th>
+          <th><button type="button" (click)="setSort('created')">Created {{ arrow('created') }}</button></th>
+          <th><button type="button" (click)="setSort('owner')">Owner {{ arrow('owner') }}</button></th>
+          <th class="num"><button type="button" (click)="setSort('size_bytes')">Size {{ arrow('size_bytes') }}</button></th>
+          <th><button type="button" (click)="setSort('time')">Detected {{ arrow('time') }}</button></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (e of pageRows(); track e.full_path + e.time) {
+          <tr>
+            <td class="name" [title]="e.full_path">{{ e.file_name }}</td>
+            <td class="mono">{{ e.subfolder }}</td>
+            <td>{{ e.created }}</td>
+            <td>{{ e.owner }}</td>
+            <td class="num" [title]="e.size_bytes + ' bytes'">{{ e.size }}</td>
+            <td>{{ e.time.replace('T', ' ') }}</td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="6" class="empty">{{ events().length ? 'No files match the current filters.' : 'No file events recorded yet. Start the storage monitor to populate this table.' }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <footer class="pager">
+    <button type="button" class="ghost" (click)="prev()" [disabled]="page() === 0">Previous</button>
+    <span>Page {{ page() + 1 }} of {{ pageCount() }}</span>
+    <button type="button" class="ghost" (click)="next()" [disabled]="page() >= pageCount() - 1">Next</button>
+  </footer>
+</main>

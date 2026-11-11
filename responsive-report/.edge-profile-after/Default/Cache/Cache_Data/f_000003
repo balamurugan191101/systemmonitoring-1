@@ -1,0 +1,441 @@
+import { injectQuery as __vite__injectQuery } from "/@vite/client";import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/main.js");import {
+  AuthService
+} from "/chunk-Q75JDU5K.js";
+
+// src/main.ts
+import { bootstrapApplication } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_platform-browser.js?v=80467f10";
+
+// src/app/app.config.ts
+import { provideBrowserGlobalErrorListeners } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_core.js?v=80467f10";
+import { provideHttpClient, withInterceptors } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_common_http.js?v=80467f10";
+import { provideRouter } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_router.js?v=80467f10";
+
+// src/app/auth/login.component.ts
+import { Component, inject, signal } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_core.js?v=80467f10";
+import { FormsModule } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_forms.js?v=80467f10";
+import { ActivatedRoute, Router } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_router.js?v=80467f10";
+import * as i0 from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_core.js?v=80467f10";
+import * as i1 from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_forms.js?v=80467f10";
+function LoginComponent_Conditional_55_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275elementStart(0, "div", 18);
+    i0.\u0275\u0275text(1, "Your session expired. Sign in again to continue.");
+    i0.\u0275\u0275elementEnd();
+  }
+}
+function LoginComponent_Conditional_56_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275elementStart(0, "div", 19);
+    i0.\u0275\u0275text(1);
+    i0.\u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = i0.\u0275\u0275nextContext();
+    i0.\u0275\u0275advance();
+    i0.\u0275\u0275textInterpolate(ctx_r0.error());
+  }
+}
+var LoginComponent = class _LoginComponent {
+  auth = inject(AuthService);
+  router = inject(Router);
+  route = inject(ActivatedRoute);
+  login = "";
+  password = "";
+  remember = false;
+  busy = signal(
+    false,
+    ...ngDevMode ? [{ debugName: "busy" }] : (
+      /* istanbul ignore next */
+      []
+    )
+  );
+  visible = signal(
+    false,
+    ...ngDevMode ? [{ debugName: "visible" }] : (
+      /* istanbul ignore next */
+      []
+    )
+  );
+  error = signal(
+    "",
+    ...ngDevMode ? [{ debugName: "error" }] : (
+      /* istanbul ignore next */
+      []
+    )
+  );
+  expired = signal(
+    false,
+    ...ngDevMode ? [{ debugName: "expired" }] : (
+      /* istanbul ignore next */
+      []
+    )
+  );
+  year = (/* @__PURE__ */ new Date()).getFullYear();
+  constructor() {
+    this.expired.set(this.route.snapshot.queryParamMap.get("expired") === "1");
+  }
+  async submit() {
+    if (this.busy())
+      return;
+    this.busy.set(true);
+    this.error.set("");
+    try {
+      await this.auth.login(this.login, this.password, this.remember);
+      const target = this.route.snapshot.queryParamMap.get("returnUrl");
+      await this.router.navigateByUrl(target?.startsWith("/") ? target : "/dashboard");
+    } catch {
+      this.error.set("Sign-in failed. Check your details or try again later.");
+    } finally {
+      this.busy.set(false);
+    }
+  }
+  static \u0275fac = function LoginComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _LoginComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ i0.\u0275\u0275defineComponent({ type: _LoginComponent, selectors: [["app-login"]], decls: 86, vars: 11, consts: [[1, "login-shell"], ["aria-label", "Storage system status", 1, "visual"], [1, "brand"], [1, "mark"], [1, "cyan"], [1, "visual-copy"], [1, "eyebrow"], [1, "storage-card"], [1, "disk-icon"], [1, "disk-meta"], [1, "live"], [1, "meter"], [1, "meter-labels"], [1, "visual-foot"], [1, "form-side"], [1, "form-wrap"], [1, "mobile-brand"], [1, "intro"], ["role", "status", 1, "notice"], ["role", "alert", 1, "error"], [3, "ngSubmit"], ["for", "login"], ["id", "login", "name", "login", "autocomplete", "username", "required", "", "maxlength", "254", "placeholder", "you@company.com", 3, "ngModelChange", "ngModel"], [1, "password-label"], ["for", "password"], ["type", "button", 1, "show", 3, "click"], ["id", "password", "name", "password", "autocomplete", "current-password", "required", "", "maxlength", "1024", "placeholder", "Enter your password", 3, "ngModelChange", "ngModel", "type"], [1, "remember"], ["type", "checkbox", "name", "remember", 3, "ngModelChange", "ngModel"], ["type", "submit", 1, "submit", 3, "disabled"], [1, "security"], [1, "help"]], template: function LoginComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      i0.\u0275\u0275elementStart(0, "main", 0)(1, "section", 1)(2, "div", 2)(3, "span", 3);
+      i0.\u0275\u0275text(4, "\u25A4");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(5, "span");
+      i0.\u0275\u0275text(6, "SYS");
+      i0.\u0275\u0275elementStart(7, "span", 4);
+      i0.\u0275\u0275text(8, "MONITOR");
+      i0.\u0275\u0275elementEnd()()();
+      i0.\u0275\u0275elementStart(9, "div", 5)(10, "p", 6);
+      i0.\u0275\u0275text(11, "INFRASTRUCTURE VISIBILITY");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(12, "h1");
+      i0.\u0275\u0275text(13, "Your storage");
+      i0.\u0275\u0275element(14, "br");
+      i0.\u0275\u0275text(15, "at a glance.");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(16, "p");
+      i0.\u0275\u0275text(17, "Secure access to your organization's storage health and file activity.");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(18, "div", 7)(19, "div", 8);
+      i0.\u0275\u0275text(20, "\u25A3");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(21, "div", 9)(22, "span");
+      i0.\u0275\u0275text(23, "Storage systems");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(24, "strong");
+      i0.\u0275\u0275text(25, "Monitoring active");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(26, "span", 10);
+      i0.\u0275\u0275element(27, "i");
+      i0.\u0275\u0275text(28, "LIVE");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(29, "div", 11);
+      i0.\u0275\u0275element(30, "span");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(31, "div", 12)(32, "span");
+      i0.\u0275\u0275text(33, "Storage utilization");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(34, "span");
+      i0.\u0275\u0275text(35, "68%");
+      i0.\u0275\u0275elementEnd()()();
+      i0.\u0275\u0275elementStart(36, "div", 13);
+      i0.\u0275\u0275text(37, "SYSTEM STORAGE MONITOR ");
+      i0.\u0275\u0275elementStart(38, "span");
+      i0.\u0275\u0275text(39, "\u2022");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275text(40, " SECURE ACCESS");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(41, "section", 14)(42, "div", 15)(43, "div", 16)(44, "span", 3);
+      i0.\u0275\u0275text(45, "\u25A4");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275text(46, " SYS");
+      i0.\u0275\u0275elementStart(47, "span", 4);
+      i0.\u0275\u0275text(48, "MONITOR");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(49, "p", 6);
+      i0.\u0275\u0275text(50, "WELCOME BACK");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(51, "h2");
+      i0.\u0275\u0275text(52, "Sign in to your account");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(53, "p", 17);
+      i0.\u0275\u0275text(54, "Enter your credentials to access the monitoring dashboard.");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275conditionalCreate(55, LoginComponent_Conditional_55_Template, 2, 0, "div", 18);
+      i0.\u0275\u0275conditionalCreate(56, LoginComponent_Conditional_56_Template, 2, 1, "div", 19);
+      i0.\u0275\u0275elementStart(57, "form", 20);
+      i0.\u0275\u0275listener("ngSubmit", function LoginComponent_Template_form_ngSubmit_57_listener() {
+        return ctx.submit();
+      });
+      i0.\u0275\u0275elementStart(58, "label", 21);
+      i0.\u0275\u0275text(59, "Username or email");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(60, "input", 22);
+      i0.\u0275\u0275controlCreate();
+      i0.\u0275\u0275twoWayListener("ngModelChange", function LoginComponent_Template_input_ngModelChange_60_listener($event) {
+        i0.\u0275\u0275twoWayBindingSet(ctx.login, $event) || (ctx.login = $event);
+        return $event;
+      });
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(61, "div", 23)(62, "label", 24);
+      i0.\u0275\u0275text(63, "Password");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(64, "button", 25);
+      i0.\u0275\u0275listener("click", function LoginComponent_Template_button_click_64_listener() {
+        return ctx.visible.update((v) => !v);
+      });
+      i0.\u0275\u0275text(65);
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(66, "input", 26);
+      i0.\u0275\u0275controlCreate();
+      i0.\u0275\u0275twoWayListener("ngModelChange", function LoginComponent_Template_input_ngModelChange_66_listener($event) {
+        i0.\u0275\u0275twoWayBindingSet(ctx.password, $event) || (ctx.password = $event);
+        return $event;
+      });
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(67, "label", 27)(68, "input", 28);
+      i0.\u0275\u0275controlCreate();
+      i0.\u0275\u0275twoWayListener("ngModelChange", function LoginComponent_Template_input_ngModelChange_68_listener($event) {
+        i0.\u0275\u0275twoWayBindingSet(ctx.remember, $event) || (ctx.remember = $event);
+        return $event;
+      });
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(69, "span");
+      i0.\u0275\u0275text(70, "Keep me signed in for 30 days");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(71, "button", 29);
+      i0.\u0275\u0275text(72);
+      i0.\u0275\u0275elementStart(73, "span");
+      i0.\u0275\u0275text(74, "\u2192");
+      i0.\u0275\u0275elementEnd()()();
+      i0.\u0275\u0275elementStart(75, "div", 30)(76, "span");
+      i0.\u0275\u0275text(77, "\u25C8");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275text(78, " Protected with encrypted session security");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(79, "p", 31);
+      i0.\u0275\u0275text(80, "Need access? Contact your system administrator.");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(81, "footer");
+      i0.\u0275\u0275text(82);
+      i0.\u0275\u0275elementStart(83, "span");
+      i0.\u0275\u0275text(84, "\xB7");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275text(85, " Authorized users only");
+      i0.\u0275\u0275elementEnd()()();
+    }
+    if (rf & 2) {
+      i0.\u0275\u0275advance(55);
+      i0.\u0275\u0275conditional(ctx.expired() ? 55 : -1);
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275conditional(ctx.error() ? 56 : -1);
+      i0.\u0275\u0275advance(4);
+      i0.\u0275\u0275twoWayProperty("ngModel", ctx.login);
+      i0.\u0275\u0275control();
+      i0.\u0275\u0275advance(4);
+      i0.\u0275\u0275attribute("aria-label", ctx.visible() ? "Hide password" : "Show password");
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275textInterpolate(ctx.visible() ? "Hide" : "Show");
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275twoWayProperty("ngModel", ctx.password);
+      i0.\u0275\u0275property("type", ctx.visible() ? "text" : "password");
+      i0.\u0275\u0275control();
+      i0.\u0275\u0275advance(2);
+      i0.\u0275\u0275twoWayProperty("ngModel", ctx.remember);
+      i0.\u0275\u0275control();
+      i0.\u0275\u0275advance(3);
+      i0.\u0275\u0275property("disabled", ctx.busy());
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275textInterpolate1("", ctx.busy() ? "Signing in\u2026" : "Sign in securely", " ");
+      i0.\u0275\u0275advance(10);
+      i0.\u0275\u0275textInterpolate1("\xA9 ", ctx.year, " System Storage Monitor ");
+    }
+  }, dependencies: [FormsModule, i1.\u0275NgNoValidate, i1.NgSelectOption, i1.\u0275NgSelectMultipleOption, i1.DefaultValueAccessor, i1.NumberValueAccessor, i1.RangeValueAccessor, i1.CheckboxControlValueAccessor, i1.SelectControlValueAccessor, i1.SelectMultipleControlValueAccessor, i1.RadioControlValueAccessor, i1.NgControlStatus, i1.NgControlStatusGroup, i1.RequiredValidator, i1.MinLengthValidator, i1.MaxLengthValidator, i1.PatternValidator, i1.CheckboxRequiredValidator, i1.EmailValidator, i1.MinValidator, i1.MaxValidator, i1.NgModel, i1.NgModelGroup, i1.NgForm], styles: ['\n[_nghost-%COMP%] {\n  display: block;\n  min-height: 100vh;\n  min-height: 100svh;\n  background: #f7f9fc;\n  color: #142038;\n  font-family:\n    Inter,\n    ui-sans-serif,\n    system-ui,\n    -apple-system,\n    "Segoe UI",\n    sans-serif;\n}\n.login-shell[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  min-height: 100svh;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}\n.visual[_ngcontent-%COMP%] {\n  position: relative;\n  overflow: hidden;\n  padding: 44px 8%;\n  display: flex;\n  flex-direction: column;\n  color: #eaf6ff;\n  background:\n    radial-gradient(\n      ellipse at 75% 55%,\n      #0a3d61 0,\n      transparent 45%),\n    linear-gradient(\n      145deg,\n      #071426,\n      #0b1e34 65%,\n      #09253b);\n}\n.visual[_ngcontent-%COMP%]:after {\n  content: "";\n  position: absolute;\n  width: 520px;\n  height: 520px;\n  border: 1px solid rgba(39, 201, 238, 0.0862745098);\n  border-radius: 50%;\n  right: -180px;\n  top: 22%;\n  box-shadow: 0 0 0 55px rgba(39, 201, 238, 0.031372549), 0 0 0 110px rgba(39, 201, 238, 0.0196078431);\n}\n.brand[_ngcontent-%COMP%], \n.mobile-brand[_ngcontent-%COMP%] {\n  font-weight: 750;\n  letter-spacing: 0.11em;\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.mark[_ngcontent-%COMP%] {\n  display: grid;\n  place-items: center;\n  width: 38px;\n  height: 38px;\n  border-radius: 10px;\n  background: #0c3348;\n  color: #3dd9fa;\n  font-size: 22px;\n}\n.cyan[_ngcontent-%COMP%] {\n  color: #27caed;\n}\n.visual-copy[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n  margin: auto 0 34px;\n  max-width: 470px;\n}\n.eyebrow[_ngcontent-%COMP%] {\n  font-size: 11px;\n  letter-spacing: 0.19em;\n  font-weight: 750;\n  color: #20bde2;\n}\n.visual[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: clamp(42px, 5vw, 64px);\n  line-height: 1.05;\n  letter-spacing: -0.045em;\n  margin: 15px 0;\n}\n.visual-copy[_ngcontent-%COMP%]    > p[_ngcontent-%COMP%]:last-child {\n  color: #a8bacb;\n  line-height: 1.7;\n  max-width: 380px;\n}\n.storage-card[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n  max-width: 430px;\n  padding: 21px;\n  background: rgba(16, 41, 64, 0.7882352941);\n  border: 1px solid #24455f;\n  border-radius: 14px;\n  display: grid;\n  grid-template-columns: 42px 1fr auto;\n  align-items: center;\n  gap: 12px;\n}\n.disk-icon[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  display: grid;\n  place-items: center;\n  background: #0b4057;\n  color: #38d7f1;\n  border-radius: 9px;\n  font-size: 22px;\n}\n.disk-meta[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 4px;\n  font-size: 12px;\n  color: #93a9bc;\n}\n.disk-meta[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: #e3f4fb;\n  font-size: 14px;\n}\n.live[_ngcontent-%COMP%] {\n  color: #63e0ad;\n  font-size: 10px;\n  letter-spacing: 0.12em;\n}\n.live[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 6px;\n  height: 6px;\n  border-radius: 9px;\n  background: #51d79c;\n  margin-right: 6px;\n}\n.meter[_ngcontent-%COMP%], \n.meter-labels[_ngcontent-%COMP%] {\n  grid-column: 1/-1;\n}\n.meter[_ngcontent-%COMP%] {\n  height: 6px;\n  border-radius: 9px;\n  background: #254057;\n  overflow: hidden;\n}\n.meter[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  display: block;\n  width: 68%;\n  height: 100%;\n  background:\n    linear-gradient(\n      90deg,\n      #11b9d5,\n      #468afa);\n  border-radius: 9px;\n}\n.meter-labels[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  color: #99afc1;\n  font-size: 11px;\n}\n.visual-foot[_ngcontent-%COMP%] {\n  margin-top: 55px;\n  color: #748da2;\n  font-size: 9px;\n  letter-spacing: 0.16em;\n}\n.visual-foot[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  padding: 0 8px;\n  color: #28c9e9;\n}\n.form-side[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 48px 9%;\n  position: relative;\n}\n.form-wrap[_ngcontent-%COMP%] {\n  width: min(100%, 400px);\n}\n.form-wrap[_ngcontent-%COMP%]    > .eyebrow[_ngcontent-%COMP%] {\n  margin: 0 0 12px;\n}\n.form-wrap[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 30px;\n  letter-spacing: -0.035em;\n  margin: 0;\n}\n.intro[_ngcontent-%COMP%] {\n  color: #69758a;\n  font-size: 14px;\n  line-height: 1.6;\n  margin: 11px 0 30px;\n}\n.form-wrap[_ngcontent-%COMP%]   form[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n}\n.form-wrap[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 650;\n  color: #27364d;\n  margin: 0 0 8px;\n}\n.form-wrap[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:not([type=checkbox]) {\n  height: 48px;\n  border: 1px solid #dce3ec;\n  border-radius: 8px;\n  padding: 0 13px;\n  font: inherit;\n  color: #192940;\n  background: white;\n  outline: none;\n  margin-bottom: 20px;\n  transition: border 0.15s, box-shadow 0.15s;\n}\n.form-wrap[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:focus {\n  border-color: #169bc4;\n  box-shadow: 0 0 0 3px rgba(19, 169, 208, 0.1098039216);\n}\n.password-label[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n}\n.show[_ngcontent-%COMP%] {\n  border: 0;\n  background: none;\n  color: #098bac;\n  font-weight: 650;\n  font-size: 12px;\n  cursor: pointer;\n  margin: -5px 0 8px;\n}\n.remember[_ngcontent-%COMP%] {\n  display: flex !important;\n  align-items: center;\n  gap: 9px;\n  margin: 0 0 22px !important;\n  color: #66738a !important;\n  font-weight: 450 !important;\n}\n.remember[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  accent-color: #087fa5;\n  width: 15px;\n  height: 15px;\n}\n.submit[_ngcontent-%COMP%] {\n  height: 49px;\n  border: 0;\n  border-radius: 8px;\n  background:\n    linear-gradient(\n      100deg,\n      #087d9f,\n      #1268b9);\n  color: white;\n  font-size: 14px;\n  font-weight: 700;\n  cursor: pointer;\n  box-shadow: 0 7px 14px rgba(8, 125, 159, 0.1450980392);\n}\n.submit[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  margin-left: 8px;\n}\n.submit[_ngcontent-%COMP%]:disabled {\n  opacity: 0.65;\n  cursor: wait;\n}\n.security[_ngcontent-%COMP%] {\n  text-align: center;\n  color: #7b879a;\n  font-size: 11px;\n  margin-top: 25px;\n}\n.security[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  color: #0786a7;\n  margin-right: 5px;\n}\n.help[_ngcontent-%COMP%] {\n  text-align: center;\n  color: #808b9c;\n  font-size: 12px;\n  margin-top: 28px;\n}\n.error[_ngcontent-%COMP%] {\n  padding: 11px 13px;\n  margin: 0 0 18px;\n  border: 1px solid #f4c4c4;\n  background: #fff2f2;\n  color: #a72828;\n  border-radius: 7px;\n  font-size: 13px;\n}\nfooter[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 25px;\n  color: #8a94a4;\n  font-size: 10px;\n}\nfooter[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  padding: 0 7px;\n}\n.mobile-brand[_ngcontent-%COMP%] {\n  display: none;\n  margin-bottom: 35px;\n}\n@media (max-width: 760px) {\n  .login-shell[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .visual[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .form-side[_ngcontent-%COMP%] {\n    min-height: 100vh;\n    min-height: 100svh;\n    padding: 38px 24px 70px;\n  }\n  .mobile-brand[_ngcontent-%COMP%] {\n    display: flex;\n  }\n  .form-wrap[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n    font-size: 27px;\n  }\n  .form-wrap[_ngcontent-%COMP%]   label[_ngcontent-%COMP%], \n   .show[_ngcontent-%COMP%], \n   .security[_ngcontent-%COMP%], \n   .help[_ngcontent-%COMP%], \n   footer[_ngcontent-%COMP%], \n   .error[_ngcontent-%COMP%], \n   .eyebrow[_ngcontent-%COMP%] {\n    font-size: 14px;\n  }\n  .show[_ngcontent-%COMP%] {\n    min-width: var(--%NS%tap-target-size);\n    min-height: var(--%NS%tap-target-size);\n    padding: 8px;\n    margin: -12px 0 0;\n  }\n  .remember[_ngcontent-%COMP%] {\n    min-height: var(--%NS%tap-target-size);\n  }\n  .form-wrap[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:not([type=checkbox]) {\n    min-height: 48px;\n  }\n  .submit[_ngcontent-%COMP%] {\n    min-height: var(--%NS%tap-target-size);\n  }\n  footer[_ngcontent-%COMP%] {\n    bottom: 18px;\n    text-align: center;\n    padding: 0 12px;\n  }\n  .remember[_ngcontent-%COMP%] {\n    font-size: 14px !important;\n  }\n  .remember[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n    width: 20px;\n    height: 20px;\n  }\n  .form-wrap[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:not([type=checkbox]) {\n    font-size: 16px;\n  }\n}\n*[_ngcontent-%COMP%]:focus-visible {\n  outline: 3px solid #169bc4;\n  outline-offset: 2px;\n}\n@media (max-width: 480px) {\n  .form-side[_ngcontent-%COMP%] {\n    padding-inline: 16px;\n  }\n  .form-wrap[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n}\n@media (max-height: 480px) and (orientation: landscape) {\n  .form-side[_ngcontent-%COMP%] {\n    justify-content: flex-start;\n  }\n  footer[_ngcontent-%COMP%] {\n    position: static;\n    margin-top: 24px;\n  }\n  .mobile-brand[_ngcontent-%COMP%] {\n    margin-bottom: 20px;\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  *[_ngcontent-%COMP%], \n   *[_ngcontent-%COMP%]::before, \n   *[_ngcontent-%COMP%]::after {\n    transition-duration: 0.01ms !important;\n    animation-duration: 0.01ms !important;\n    scroll-behavior: auto !important;\n  }\n}\n/*# sourceMappingURL=login.component.css.map */'] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i0.\u0275setClassMetadata(LoginComponent, [{
+    type: Component,
+    args: [{ selector: "app-login", standalone: true, imports: [FormsModule], template: `
+<main class="login-shell"><section class="visual" aria-label="Storage system status">
+  <div class="brand"><span class="mark">\u25A4</span><span>SYS<span class="cyan">MONITOR</span></span></div>
+  <div class="visual-copy"><p class="eyebrow">INFRASTRUCTURE VISIBILITY</p><h1>Your storage<br>at a glance.</h1><p>Secure access to your organization's storage health and file activity.</p></div>
+  <div class="storage-card"><div class="disk-icon">\u25A3</div><div class="disk-meta"><span>Storage systems</span><strong>Monitoring active</strong></div><span class="live"><i></i>LIVE</span><div class="meter"><span></span></div><div class="meter-labels"><span>Storage utilization</span><span>68%</span></div></div>
+  <div class="visual-foot">SYSTEM STORAGE MONITOR <span>\u2022</span> SECURE ACCESS</div>
+</section><section class="form-side"><div class="form-wrap"><div class="mobile-brand"><span class="mark">\u25A4</span> SYS<span class="cyan">MONITOR</span></div>
+  <p class="eyebrow">WELCOME BACK</p><h2>Sign in to your account</h2><p class="intro">Enter your credentials to access the monitoring dashboard.</p>
+  @if (expired()) { <div class="notice" role="status">Your session expired. Sign in again to continue.</div> }
+  @if (error()) { <div class="error" role="alert">{{ error() }}</div> }
+  <form (ngSubmit)="submit()"><label for="login">Username or email</label><input id="login" name="login" [(ngModel)]="login" autocomplete="username" required maxlength="254" placeholder="you@company.com">
+    <div class="password-label"><label for="password">Password</label><button type="button" class="show" (click)="visible.update(v => !v)" [attr.aria-label]="visible() ? 'Hide password' : 'Show password'">{{ visible() ? 'Hide' : 'Show' }}</button></div>
+    <input id="password" name="password" [(ngModel)]="password" [type]="visible() ? 'text' : 'password'" autocomplete="current-password" required maxlength="1024" placeholder="Enter your password">
+    <label class="remember"><input type="checkbox" name="remember" [(ngModel)]="remember"> <span>Keep me signed in for 30 days</span></label>
+    <button class="submit" type="submit" [disabled]="busy()">{{ busy() ? 'Signing in\u2026' : 'Sign in securely' }} <span>\u2192</span></button>
+  </form><div class="security"><span>\u25C8</span> Protected with encrypted session security</div><p class="help">Need access? Contact your system administrator.</p>
+</div><footer>\xA9 {{ year }} System Storage Monitor <span>\xB7</span> Authorized users only</footer></section></main>
+`, styles: ['/* src/app/auth/login.component.scss */\n:host {\n  display: block;\n  min-height: 100vh;\n  min-height: 100svh;\n  background: #f7f9fc;\n  color: #142038;\n  font-family:\n    Inter,\n    ui-sans-serif,\n    system-ui,\n    -apple-system,\n    "Segoe UI",\n    sans-serif;\n}\n.login-shell {\n  min-height: 100vh;\n  min-height: 100svh;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}\n.visual {\n  position: relative;\n  overflow: hidden;\n  padding: 44px 8%;\n  display: flex;\n  flex-direction: column;\n  color: #eaf6ff;\n  background:\n    radial-gradient(\n      ellipse at 75% 55%,\n      #0a3d61 0,\n      transparent 45%),\n    linear-gradient(\n      145deg,\n      #071426,\n      #0b1e34 65%,\n      #09253b);\n}\n.visual:after {\n  content: "";\n  position: absolute;\n  width: 520px;\n  height: 520px;\n  border: 1px solid rgba(39, 201, 238, 0.0862745098);\n  border-radius: 50%;\n  right: -180px;\n  top: 22%;\n  box-shadow: 0 0 0 55px rgba(39, 201, 238, 0.031372549), 0 0 0 110px rgba(39, 201, 238, 0.0196078431);\n}\n.brand,\n.mobile-brand {\n  font-weight: 750;\n  letter-spacing: 0.11em;\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.mark {\n  display: grid;\n  place-items: center;\n  width: 38px;\n  height: 38px;\n  border-radius: 10px;\n  background: #0c3348;\n  color: #3dd9fa;\n  font-size: 22px;\n}\n.cyan {\n  color: #27caed;\n}\n.visual-copy {\n  position: relative;\n  z-index: 1;\n  margin: auto 0 34px;\n  max-width: 470px;\n}\n.eyebrow {\n  font-size: 11px;\n  letter-spacing: 0.19em;\n  font-weight: 750;\n  color: #20bde2;\n}\n.visual h1 {\n  font-size: clamp(42px, 5vw, 64px);\n  line-height: 1.05;\n  letter-spacing: -0.045em;\n  margin: 15px 0;\n}\n.visual-copy > p:last-child {\n  color: #a8bacb;\n  line-height: 1.7;\n  max-width: 380px;\n}\n.storage-card {\n  position: relative;\n  z-index: 1;\n  max-width: 430px;\n  padding: 21px;\n  background: rgba(16, 41, 64, 0.7882352941);\n  border: 1px solid #24455f;\n  border-radius: 14px;\n  display: grid;\n  grid-template-columns: 42px 1fr auto;\n  align-items: center;\n  gap: 12px;\n}\n.disk-icon {\n  width: 40px;\n  height: 40px;\n  display: grid;\n  place-items: center;\n  background: #0b4057;\n  color: #38d7f1;\n  border-radius: 9px;\n  font-size: 22px;\n}\n.disk-meta {\n  display: grid;\n  gap: 4px;\n  font-size: 12px;\n  color: #93a9bc;\n}\n.disk-meta strong {\n  color: #e3f4fb;\n  font-size: 14px;\n}\n.live {\n  color: #63e0ad;\n  font-size: 10px;\n  letter-spacing: 0.12em;\n}\n.live i {\n  display: inline-block;\n  width: 6px;\n  height: 6px;\n  border-radius: 9px;\n  background: #51d79c;\n  margin-right: 6px;\n}\n.meter,\n.meter-labels {\n  grid-column: 1/-1;\n}\n.meter {\n  height: 6px;\n  border-radius: 9px;\n  background: #254057;\n  overflow: hidden;\n}\n.meter span {\n  display: block;\n  width: 68%;\n  height: 100%;\n  background:\n    linear-gradient(\n      90deg,\n      #11b9d5,\n      #468afa);\n  border-radius: 9px;\n}\n.meter-labels {\n  display: flex;\n  justify-content: space-between;\n  color: #99afc1;\n  font-size: 11px;\n}\n.visual-foot {\n  margin-top: 55px;\n  color: #748da2;\n  font-size: 9px;\n  letter-spacing: 0.16em;\n}\n.visual-foot span {\n  padding: 0 8px;\n  color: #28c9e9;\n}\n.form-side {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 48px 9%;\n  position: relative;\n}\n.form-wrap {\n  width: min(100%, 400px);\n}\n.form-wrap > .eyebrow {\n  margin: 0 0 12px;\n}\n.form-wrap h2 {\n  font-size: 30px;\n  letter-spacing: -0.035em;\n  margin: 0;\n}\n.intro {\n  color: #69758a;\n  font-size: 14px;\n  line-height: 1.6;\n  margin: 11px 0 30px;\n}\n.form-wrap form {\n  display: flex;\n  flex-direction: column;\n}\n.form-wrap label {\n  font-size: 12px;\n  font-weight: 650;\n  color: #27364d;\n  margin: 0 0 8px;\n}\n.form-wrap input:not([type=checkbox]) {\n  height: 48px;\n  border: 1px solid #dce3ec;\n  border-radius: 8px;\n  padding: 0 13px;\n  font: inherit;\n  color: #192940;\n  background: white;\n  outline: none;\n  margin-bottom: 20px;\n  transition: border 0.15s, box-shadow 0.15s;\n}\n.form-wrap input:focus {\n  border-color: #169bc4;\n  box-shadow: 0 0 0 3px rgba(19, 169, 208, 0.1098039216);\n}\n.password-label {\n  display: flex;\n  justify-content: space-between;\n}\n.show {\n  border: 0;\n  background: none;\n  color: #098bac;\n  font-weight: 650;\n  font-size: 12px;\n  cursor: pointer;\n  margin: -5px 0 8px;\n}\n.remember {\n  display: flex !important;\n  align-items: center;\n  gap: 9px;\n  margin: 0 0 22px !important;\n  color: #66738a !important;\n  font-weight: 450 !important;\n}\n.remember input {\n  accent-color: #087fa5;\n  width: 15px;\n  height: 15px;\n}\n.submit {\n  height: 49px;\n  border: 0;\n  border-radius: 8px;\n  background:\n    linear-gradient(\n      100deg,\n      #087d9f,\n      #1268b9);\n  color: white;\n  font-size: 14px;\n  font-weight: 700;\n  cursor: pointer;\n  box-shadow: 0 7px 14px rgba(8, 125, 159, 0.1450980392);\n}\n.submit span {\n  margin-left: 8px;\n}\n.submit:disabled {\n  opacity: 0.65;\n  cursor: wait;\n}\n.security {\n  text-align: center;\n  color: #7b879a;\n  font-size: 11px;\n  margin-top: 25px;\n}\n.security span {\n  color: #0786a7;\n  margin-right: 5px;\n}\n.help {\n  text-align: center;\n  color: #808b9c;\n  font-size: 12px;\n  margin-top: 28px;\n}\n.error {\n  padding: 11px 13px;\n  margin: 0 0 18px;\n  border: 1px solid #f4c4c4;\n  background: #fff2f2;\n  color: #a72828;\n  border-radius: 7px;\n  font-size: 13px;\n}\nfooter {\n  position: absolute;\n  bottom: 25px;\n  color: #8a94a4;\n  font-size: 10px;\n}\nfooter span {\n  padding: 0 7px;\n}\n.mobile-brand {\n  display: none;\n  margin-bottom: 35px;\n}\n@media (max-width: 760px) {\n  .login-shell {\n    grid-template-columns: 1fr;\n  }\n  .visual {\n    display: none;\n  }\n  .form-side {\n    min-height: 100vh;\n    min-height: 100svh;\n    padding: 38px 24px 70px;\n  }\n  .mobile-brand {\n    display: flex;\n  }\n  .form-wrap h2 {\n    font-size: 27px;\n  }\n  .form-wrap label,\n  .show,\n  .security,\n  .help,\n  footer,\n  .error,\n  .eyebrow {\n    font-size: 14px;\n  }\n  .show {\n    min-width: var(--tap-target-size);\n    min-height: var(--tap-target-size);\n    padding: 8px;\n    margin: -12px 0 0;\n  }\n  .remember {\n    min-height: var(--tap-target-size);\n  }\n  .form-wrap input:not([type=checkbox]) {\n    min-height: 48px;\n  }\n  .submit {\n    min-height: var(--tap-target-size);\n  }\n  footer {\n    bottom: 18px;\n    text-align: center;\n    padding: 0 12px;\n  }\n  .remember {\n    font-size: 14px !important;\n  }\n  .remember input {\n    width: 20px;\n    height: 20px;\n  }\n  .form-wrap input:not([type=checkbox]) {\n    font-size: 16px;\n  }\n}\n*:focus-visible {\n  outline: 3px solid #169bc4;\n  outline-offset: 2px;\n}\n@media (max-width: 480px) {\n  .form-side {\n    padding-inline: 16px;\n  }\n  .form-wrap {\n    width: 100%;\n  }\n}\n@media (max-height: 480px) and (orientation: landscape) {\n  .form-side {\n    justify-content: flex-start;\n  }\n  footer {\n    position: static;\n    margin-top: 24px;\n  }\n  .mobile-brand {\n    margin-bottom: 20px;\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  *,\n  *::before,\n  *::after {\n    transition-duration: 0.01ms !important;\n    animation-duration: 0.01ms !important;\n    scroll-behavior: auto !important;\n  }\n}\n/*# sourceMappingURL=login.component.css.map */\n'] }]
+  }], () => [], null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i0.\u0275setClassDebugInfo(LoginComponent, { className: "LoginComponent", filePath: "src/app/auth/login.component.ts", lineNumber: 27 });
+})();
+(() => {
+  const id = "src%2Fapp%2Fauth%2Flogin.component.ts%40LoginComponent";
+  function LoginComponent_HmrLoad(t) {
+    import(
+      /* @vite-ignore */
+      __vite__injectQuery(i0.\u0275\u0275getReplaceMetadataURL(id, t, import.meta.url), 'import')
+    ).then((m) => m.default && i0.\u0275\u0275replaceMetadata(LoginComponent, m.default, [i0, i1], [FormsModule, Component], import.meta, id));
+  }
+  (typeof ngDevMode === "undefined" || ngDevMode) && LoginComponent_HmrLoad(Date.now());
+  (typeof ngDevMode === "undefined" || ngDevMode) && (import.meta.hot && import.meta.hot.on("angular:component-update", (d) => d.id === id && LoginComponent_HmrLoad(d.timestamp)));
+})();
+
+// src/app/auth/access-denied.component.ts
+import { Component as Component2 } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_core.js?v=80467f10";
+import { RouterLink } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_router.js?v=80467f10";
+import * as i02 from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_core.js?v=80467f10";
+var AccessDeniedComponent = class _AccessDeniedComponent {
+  static \u0275fac = function AccessDeniedComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _AccessDeniedComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ i02.\u0275\u0275defineComponent({ type: _AccessDeniedComponent, selectors: [["app-access-denied"]], decls: 10, vars: 0, consts: [[1, "panel"], [1, "icon"], ["routerLink", "/dashboard"]], template: function AccessDeniedComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      i02.\u0275\u0275elementStart(0, "main")(1, "div", 0)(2, "span", 1);
+      i02.\u0275\u0275text(3, "403");
+      i02.\u0275\u0275elementEnd();
+      i02.\u0275\u0275elementStart(4, "h1");
+      i02.\u0275\u0275text(5, "Access denied");
+      i02.\u0275\u0275elementEnd();
+      i02.\u0275\u0275elementStart(6, "p");
+      i02.\u0275\u0275text(7, "Your account does not have permission to view this page.");
+      i02.\u0275\u0275elementEnd();
+      i02.\u0275\u0275elementStart(8, "a", 2);
+      i02.\u0275\u0275text(9, "Return to dashboard");
+      i02.\u0275\u0275elementEnd()()();
+    }
+  }, dependencies: [RouterLink], styles: ["\n[_nghost-%COMP%] {\n  display: block;\n  min-height: 100vh;\n  background: #071426;\n  color: #e9f5fc;\n  font-family: system-ui;\n}\nmain[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  display: grid;\n  place-items: center;\n}\n.panel[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 42px;\n  border: 1px solid #24455f;\n  background: #102940;\n  border-radius: 15px;\n}\n.icon[_ngcontent-%COMP%] {\n  color: #25c6e5;\n  font-weight: 800;\n  letter-spacing: .2em;\n}\np[_ngcontent-%COMP%] {\n  color: #a8bacb;\n}\na[_ngcontent-%COMP%] {\n  display: inline-block;\n  margin-top: 18px;\n  color: #48d7f0;\n}\n/*# sourceMappingURL=access-denied.component.css.map */"] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i02.\u0275setClassMetadata(AccessDeniedComponent, [{
+    type: Component2,
+    args: [{ selector: "app-access-denied", standalone: true, imports: [RouterLink], template: `<main><div class="panel"><span class="icon">403</span><h1>Access denied</h1><p>Your account does not have permission to view this page.</p><a routerLink="/dashboard">Return to dashboard</a></div></main>`, styles: ["/* angular:styles/component:css;efd2193d74f02c43;C:\\Users\\0363\\Desktop\\html\\storage-monitor-dashboard\\src\\app\\auth\\access-denied.component.ts */\n:host {\n  display: block;\n  min-height: 100vh;\n  background: #071426;\n  color: #e9f5fc;\n  font-family: system-ui;\n}\nmain {\n  min-height: 100vh;\n  display: grid;\n  place-items: center;\n}\n.panel {\n  text-align: center;\n  padding: 42px;\n  border: 1px solid #24455f;\n  background: #102940;\n  border-radius: 15px;\n}\n.icon {\n  color: #25c6e5;\n  font-weight: 800;\n  letter-spacing: .2em;\n}\np {\n  color: #a8bacb;\n}\na {\n  display: inline-block;\n  margin-top: 18px;\n  color: #48d7f0;\n}\n/*# sourceMappingURL=access-denied.component.css.map */\n"] }]
+  }], null, null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i02.\u0275setClassDebugInfo(AccessDeniedComponent, { className: "AccessDeniedComponent", filePath: "src/app/auth/access-denied.component.ts", lineNumber: 5 });
+})();
+(() => {
+  const id = "src%2Fapp%2Fauth%2Faccess-denied.component.ts%40AccessDeniedComponent";
+  function AccessDeniedComponent_HmrLoad(t) {
+    import(
+      /* @vite-ignore */
+      __vite__injectQuery(i02.\u0275\u0275getReplaceMetadataURL(id, t, import.meta.url), 'import')
+    ).then((m) => m.default && i02.\u0275\u0275replaceMetadata(AccessDeniedComponent, m.default, [i02], [RouterLink, Component2], import.meta, id));
+  }
+  (typeof ngDevMode === "undefined" || ngDevMode) && AccessDeniedComponent_HmrLoad(Date.now());
+  (typeof ngDevMode === "undefined" || ngDevMode) && (import.meta.hot && import.meta.hot.on("angular:component-update", (d) => d.id === id && AccessDeniedComponent_HmrLoad(d.timestamp)));
+})();
+
+// src/app/auth/auth.guard.ts
+import { inject as inject2 } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_core.js?v=80467f10";
+import { Router as Router2 } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_router.js?v=80467f10";
+var authGuard = async (_route, state) => {
+  const auth = inject2(AuthService), router = inject2(Router2);
+  if (!auth.ready()) await auth.restore();
+  return auth.user() ? true : router.createUrlTree(["/login"], { queryParams: { returnUrl: state.url } });
+};
+var roleGuard = (route) => {
+  const auth = inject2(AuthService), router = inject2(Router2);
+  return !route.data["roles"] || route.data["roles"].includes(auth.user()?.role) ? true : router.createUrlTree(["/forbidden"]);
+};
+
+// src/app/app.routes.ts
+var routes = [
+  { path: "login", component: LoginComponent },
+  { path: "forbidden", component: AccessDeniedComponent, canActivate: [authGuard] },
+  { path: "dashboard", loadComponent: () => import("/chunk-YNCDSNVY.js").then((m) => m.DashboardComponent), canActivate: [authGuard, roleGuard], data: { roles: ["Super Admin", "Admin", "IT Engineer", "Viewer"] } },
+  { path: "", pathMatch: "full", redirectTo: "dashboard" },
+  { path: "**", redirectTo: "dashboard" }
+];
+
+// src/app/auth/auth.interceptor.ts
+import { inject as inject3 } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_core.js?v=80467f10";
+import { Router as Router3 } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_router.js?v=80467f10";
+import { catchError, throwError } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/rxjs.js?v=80467f10";
+var authInterceptor = (req, next) => {
+  const auth = inject3(AuthService);
+  const router = inject3(Router3);
+  const headers = auth.csrfToken() && !["GET", "HEAD", "OPTIONS"].includes(req.method) ? req.headers.set("X-CSRF-Token", auth.csrfToken()) : req.headers;
+  return next(req.clone({ withCredentials: true, headers })).pipe(catchError((err) => {
+    if (err.status === 401 && !req.url.includes("/api/auth/login") && !req.url.includes("/api/auth/csrf")) {
+      auth.expire();
+      void router.navigate(["/login"], { queryParams: { expired: "1" } });
+    } else if (err.status === 403 && !req.url.includes("/api/auth/")) {
+      void router.navigate(["/forbidden"]);
+    }
+    return throwError(() => err);
+  }));
+};
+
+// src/app/app.config.ts
+var appConfig = {
+  providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(withInterceptors([authInterceptor])), provideRouter(routes)]
+};
+
+// src/app/app.ts
+import { Component as Component3, inject as inject4 } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_core.js?v=80467f10";
+import { RouterOutlet } from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_router.js?v=80467f10";
+import * as i03 from "/@fs/C:/Users/0363/Desktop/html/storage-monitor-dashboard/.angular/cache/22.2.5/storage-monitor-dashboard/vite/deps/@angular_core.js?v=80467f10";
+function App_Conditional_0_Template(rf, ctx) {
+  if (rf & 1) {
+    i03.\u0275\u0275element(0, "router-outlet");
+  }
+}
+function App_Conditional_1_Template(rf, ctx) {
+  if (rf & 1) {
+    i03.\u0275\u0275elementStart(0, "main", 0);
+    i03.\u0275\u0275text(1, "Loading secure session\u2026");
+    i03.\u0275\u0275elementEnd();
+  }
+}
+var App = class _App {
+  auth = inject4(AuthService);
+  constructor() {
+    void this.auth.restore();
+  }
+  static \u0275fac = function App_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _App)();
+  };
+  static \u0275cmp = /* @__PURE__ */ i03.\u0275\u0275defineComponent({ type: _App, selectors: [["app-root"]], decls: 2, vars: 1, consts: [[1, "loading"]], template: function App_Template(rf, ctx) {
+    if (rf & 1) {
+      i03.\u0275\u0275conditionalCreate(0, App_Conditional_0_Template, 1, 0, "router-outlet")(1, App_Conditional_1_Template, 2, 0, "main", 0);
+    }
+    if (rf & 2) {
+      i03.\u0275\u0275conditional(ctx.auth.ready() ? 0 : 1);
+    }
+  }, dependencies: [RouterOutlet], styles: ["\n.loading[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  display: grid;\n  place-items: center;\n  background: #071426;\n  color: #b6d1e2;\n  font: 14px system-ui;\n}\n/*# sourceMappingURL=app.css.map */"] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i03.\u0275setClassMetadata(App, [{
+    type: Component3,
+    args: [{ selector: "app-root", standalone: true, imports: [RouterOutlet], template: `@if (auth.ready()) { <router-outlet /> } @else { <main class="loading">Loading secure session\u2026</main> }`, styles: ["/* angular:styles/component:css;66ec45d34a71f719;C:\\Users\\0363\\Desktop\\html\\storage-monitor-dashboard\\src\\app\\app.ts */\n.loading {\n  min-height: 100vh;\n  display: grid;\n  place-items: center;\n  background: #071426;\n  color: #b6d1e2;\n  font: 14px system-ui;\n}\n/*# sourceMappingURL=app.css.map */\n"] }]
+  }], () => [], null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i03.\u0275setClassDebugInfo(App, { className: "App", filePath: "src/app/app.ts", lineNumber: 6 });
+})();
+(() => {
+  const id = "src%2Fapp%2Fapp.ts%40App";
+  function App_HmrLoad(t) {
+    import(
+      /* @vite-ignore */
+      __vite__injectQuery(i03.\u0275\u0275getReplaceMetadataURL(id, t, import.meta.url), 'import')
+    ).then((m) => m.default && i03.\u0275\u0275replaceMetadata(App, m.default, [i03], [RouterOutlet, Component3], import.meta, id));
+  }
+  (typeof ngDevMode === "undefined" || ngDevMode) && App_HmrLoad(Date.now());
+  (typeof ngDevMode === "undefined" || ngDevMode) && (import.meta.hot && import.meta.hot.on("angular:component-update", (d) => d.id === id && App_HmrLoad(d.timestamp)));
+})();
+
+// src/main.ts
+bootstrapApplication(App, appConfig).catch((err) => console.error(err));
+//# debugId=363767c0-ae72-572e-accc-78f3162e62fb
+
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9tYWluLnRzIiwic3JjL2FwcC9hcHAuY29uZmlnLnRzIiwic3JjL2FwcC9hdXRoL2xvZ2luLmNvbXBvbmVudC50cyIsInNyYy9hcHAvYXV0aC9hY2Nlc3MtZGVuaWVkLmNvbXBvbmVudC50cyIsInNyYy9hcHAvYXV0aC9hdXRoLmd1YXJkLnRzIiwic3JjL2FwcC9hcHAucm91dGVzLnRzIiwic3JjL2FwcC9hdXRoL2F1dGguaW50ZXJjZXB0b3IudHMiLCJzcmMvYXBwL2FwcC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBib290c3RyYXBBcHBsaWNhdGlvbiB9IGZyb20gJ0Bhbmd1bGFyL3BsYXRmb3JtLWJyb3dzZXInO1xuaW1wb3J0IHsgYXBwQ29uZmlnIH0gZnJvbSAnLi9hcHAvYXBwLmNvbmZpZyc7XG5pbXBvcnQgeyBBcHAgfSBmcm9tICcuL2FwcC9hcHAnO1xuXG5ib290c3RyYXBBcHBsaWNhdGlvbihBcHAsIGFwcENvbmZpZylcbiAgLmNhdGNoKChlcnIpID0+IGNvbnNvbGUuZXJyb3IoZXJyKSk7XG4iLCJpbXBvcnQgeyBBcHBsaWNhdGlvbkNvbmZpZywgcHJvdmlkZUJyb3dzZXJHbG9iYWxFcnJvckxpc3RlbmVycyB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgcHJvdmlkZUh0dHBDbGllbnQsIHdpdGhJbnRlcmNlcHRvcnMgfSBmcm9tICdAYW5ndWxhci9jb21tb24vaHR0cCc7XG5pbXBvcnQgeyBwcm92aWRlUm91dGVyIH0gZnJvbSAnQGFuZ3VsYXIvcm91dGVyJztcbmltcG9ydCB7IHJvdXRlcyB9IGZyb20gJy4vYXBwLnJvdXRlcyc7XG5pbXBvcnQgeyBhdXRoSW50ZXJjZXB0b3IgfSBmcm9tICcuL2F1dGgvYXV0aC5pbnRlcmNlcHRvcic7XG5cbmV4cG9ydCBjb25zdCBhcHBDb25maWc6IEFwcGxpY2F0aW9uQ29uZmlnID0ge1xuICBwcm92aWRlcnM6IFtwcm92aWRlQnJvd3Nlckdsb2JhbEVycm9yTGlzdGVuZXJzKCksIHByb3ZpZGVIdHRwQ2xpZW50KHdpdGhJbnRlcmNlcHRvcnMoW2F1dGhJbnRlcmNlcHRvcl0pKSwgcHJvdmlkZVJvdXRlcihyb3V0ZXMpXSxcbn07XG4iLCJpbXBvcnQgeyBDb21wb25lbnQsIGluamVjdCwgc2lnbmFsIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XHJcbmltcG9ydCB7IEZvcm1zTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvZm9ybXMnO1xyXG5pbXBvcnQgeyBBY3RpdmF0ZWRSb3V0ZSwgUm91dGVyIH0gZnJvbSAnQGFuZ3VsYXIvcm91dGVyJztcclxuaW1wb3J0IHsgQXV0aFNlcnZpY2UgfSBmcm9tICcuL2F1dGguc2VydmljZSc7XHJcblxyXG5AQ29tcG9uZW50KHtcclxuICBzZWxlY3RvcjogJ2FwcC1sb2dpbicsIHN0YW5kYWxvbmU6IHRydWUsIGltcG9ydHM6IFtGb3Jtc01vZHVsZV0sIHRlbXBsYXRlOiBgXHJcbjxtYWluIGNsYXNzPVwibG9naW4tc2hlbGxcIj48c2VjdGlvbiBjbGFzcz1cInZpc3VhbFwiIGFyaWEtbGFiZWw9XCJTdG9yYWdlIHN5c3RlbSBzdGF0dXNcIj5cclxuICA8ZGl2IGNsYXNzPVwiYnJhbmRcIj48c3BhbiBjbGFzcz1cIm1hcmtcIj7ilqQ8L3NwYW4+PHNwYW4+U1lTPHNwYW4gY2xhc3M9XCJjeWFuXCI+TU9OSVRPUjwvc3Bhbj48L3NwYW4+PC9kaXY+XHJcbiAgPGRpdiBjbGFzcz1cInZpc3VhbC1jb3B5XCI+PHAgY2xhc3M9XCJleWVicm93XCI+SU5GUkFTVFJVQ1RVUkUgVklTSUJJTElUWTwvcD48aDE+WW91ciBzdG9yYWdlPGJyPmF0IGEgZ2xhbmNlLjwvaDE+PHA+U2VjdXJlIGFjY2VzcyB0byB5b3VyIG9yZ2FuaXphdGlvbidzIHN0b3JhZ2UgaGVhbHRoIGFuZCBmaWxlIGFjdGl2aXR5LjwvcD48L2Rpdj5cclxuICA8ZGl2IGNsYXNzPVwic3RvcmFnZS1jYXJkXCI+PGRpdiBjbGFzcz1cImRpc2staWNvblwiPuKWozwvZGl2PjxkaXYgY2xhc3M9XCJkaXNrLW1ldGFcIj48c3Bhbj5TdG9yYWdlIHN5c3RlbXM8L3NwYW4+PHN0cm9uZz5Nb25pdG9yaW5nIGFjdGl2ZTwvc3Ryb25nPjwvZGl2PjxzcGFuIGNsYXNzPVwibGl2ZVwiPjxpPjwvaT5MSVZFPC9zcGFuPjxkaXYgY2xhc3M9XCJtZXRlclwiPjxzcGFuPjwvc3Bhbj48L2Rpdj48ZGl2IGNsYXNzPVwibWV0ZXItbGFiZWxzXCI+PHNwYW4+U3RvcmFnZSB1dGlsaXphdGlvbjwvc3Bhbj48c3Bhbj42OCU8L3NwYW4+PC9kaXY+PC9kaXY+XHJcbiAgPGRpdiBjbGFzcz1cInZpc3VhbC1mb290XCI+U1lTVEVNIFNUT1JBR0UgTU9OSVRPUiA8c3Bhbj7igKI8L3NwYW4+IFNFQ1VSRSBBQ0NFU1M8L2Rpdj5cclxuPC9zZWN0aW9uPjxzZWN0aW9uIGNsYXNzPVwiZm9ybS1zaWRlXCI+PGRpdiBjbGFzcz1cImZvcm0td3JhcFwiPjxkaXYgY2xhc3M9XCJtb2JpbGUtYnJhbmRcIj48c3BhbiBjbGFzcz1cIm1hcmtcIj7ilqQ8L3NwYW4+IFNZUzxzcGFuIGNsYXNzPVwiY3lhblwiPk1PTklUT1I8L3NwYW4+PC9kaXY+XHJcbiAgPHAgY2xhc3M9XCJleWVicm93XCI+V0VMQ09NRSBCQUNLPC9wPjxoMj5TaWduIGluIHRvIHlvdXIgYWNjb3VudDwvaDI+PHAgY2xhc3M9XCJpbnRyb1wiPkVudGVyIHlvdXIgY3JlZGVudGlhbHMgdG8gYWNjZXNzIHRoZSBtb25pdG9yaW5nIGRhc2hib2FyZC48L3A+XHJcbiAgQGlmIChleHBpcmVkKCkpIHsgPGRpdiBjbGFzcz1cIm5vdGljZVwiIHJvbGU9XCJzdGF0dXNcIj5Zb3VyIHNlc3Npb24gZXhwaXJlZC4gU2lnbiBpbiBhZ2FpbiB0byBjb250aW51ZS48L2Rpdj4gfVxyXG4gIEBpZiAoZXJyb3IoKSkgeyA8ZGl2IGNsYXNzPVwiZXJyb3JcIiByb2xlPVwiYWxlcnRcIj57eyBlcnJvcigpIH19PC9kaXY+IH1cclxuICA8Zm9ybSAobmdTdWJtaXQpPVwic3VibWl0KClcIj48bGFiZWwgZm9yPVwibG9naW5cIj5Vc2VybmFtZSBvciBlbWFpbDwvbGFiZWw+PGlucHV0IGlkPVwibG9naW5cIiBuYW1lPVwibG9naW5cIiBbKG5nTW9kZWwpXT1cImxvZ2luXCIgYXV0b2NvbXBsZXRlPVwidXNlcm5hbWVcIiByZXF1aXJlZCBtYXhsZW5ndGg9XCIyNTRcIiBwbGFjZWhvbGRlcj1cInlvdUBjb21wYW55LmNvbVwiPlxyXG4gICAgPGRpdiBjbGFzcz1cInBhc3N3b3JkLWxhYmVsXCI+PGxhYmVsIGZvcj1cInBhc3N3b3JkXCI+UGFzc3dvcmQ8L2xhYmVsPjxidXR0b24gdHlwZT1cImJ1dHRvblwiIGNsYXNzPVwic2hvd1wiIChjbGljayk9XCJ2aXNpYmxlLnVwZGF0ZSh2ID0+ICF2KVwiIFthdHRyLmFyaWEtbGFiZWxdPVwidmlzaWJsZSgpID8gJ0hpZGUgcGFzc3dvcmQnIDogJ1Nob3cgcGFzc3dvcmQnXCI+e3sgdmlzaWJsZSgpID8gJ0hpZGUnIDogJ1Nob3cnIH19PC9idXR0b24+PC9kaXY+XHJcbiAgICA8aW5wdXQgaWQ9XCJwYXNzd29yZFwiIG5hbWU9XCJwYXNzd29yZFwiIFsobmdNb2RlbCldPVwicGFzc3dvcmRcIiBbdHlwZV09XCJ2aXNpYmxlKCkgPyAndGV4dCcgOiAncGFzc3dvcmQnXCIgYXV0b2NvbXBsZXRlPVwiY3VycmVudC1wYXNzd29yZFwiIHJlcXVpcmVkIG1heGxlbmd0aD1cIjEwMjRcIiBwbGFjZWhvbGRlcj1cIkVudGVyIHlvdXIgcGFzc3dvcmRcIj5cclxuICAgIDxsYWJlbCBjbGFzcz1cInJlbWVtYmVyXCI+PGlucHV0IHR5cGU9XCJjaGVja2JveFwiIG5hbWU9XCJyZW1lbWJlclwiIFsobmdNb2RlbCldPVwicmVtZW1iZXJcIj4gPHNwYW4+S2VlcCBtZSBzaWduZWQgaW4gZm9yIDMwIGRheXM8L3NwYW4+PC9sYWJlbD5cclxuICAgIDxidXR0b24gY2xhc3M9XCJzdWJtaXRcIiB0eXBlPVwic3VibWl0XCIgW2Rpc2FibGVkXT1cImJ1c3koKVwiPnt7IGJ1c3koKSA/ICdTaWduaW5nIGlu4oCmJyA6ICdTaWduIGluIHNlY3VyZWx5JyB9fSA8c3Bhbj7ihpI8L3NwYW4+PC9idXR0b24+XHJcbiAgPC9mb3JtPjxkaXYgY2xhc3M9XCJzZWN1cml0eVwiPjxzcGFuPuKXiDwvc3Bhbj4gUHJvdGVjdGVkIHdpdGggZW5jcnlwdGVkIHNlc3Npb24gc2VjdXJpdHk8L2Rpdj48cCBjbGFzcz1cImhlbHBcIj5OZWVkIGFjY2Vzcz8gQ29udGFjdCB5b3VyIHN5c3RlbSBhZG1pbmlzdHJhdG9yLjwvcD5cclxuPC9kaXY+PGZvb3Rlcj7CqSB7eyB5ZWFyIH19IFN5c3RlbSBTdG9yYWdlIE1vbml0b3IgPHNwYW4+wrc8L3NwYW4+IEF1dGhvcml6ZWQgdXNlcnMgb25seTwvZm9vdGVyPjwvc2VjdGlvbj48L21haW4+XHJcbmAsXHJcbiAgc3R5bGVVcmw6ICcuL2xvZ2luLmNvbXBvbmVudC5zY3NzJ1xyXG59KVxyXG5leHBvcnQgY2xhc3MgTG9naW5Db21wb25lbnQge1xyXG4gIHByaXZhdGUgYXV0aCA9IGluamVjdChBdXRoU2VydmljZSk7IHByaXZhdGUgcm91dGVyID0gaW5qZWN0KFJvdXRlcik7IHByaXZhdGUgcm91dGUgPSBpbmplY3QoQWN0aXZhdGVkUm91dGUpO1xyXG4gIGxvZ2luID0gJyc7IHBhc3N3b3JkID0gJyc7IHJlbWVtYmVyID0gZmFsc2U7IHJlYWRvbmx5IGJ1c3kgPSBzaWduYWwoZmFsc2UpOyByZWFkb25seSB2aXNpYmxlID0gc2lnbmFsKGZhbHNlKTsgcmVhZG9ubHkgZXJyb3IgPSBzaWduYWwoJycpOyByZWFkb25seSBleHBpcmVkID0gc2lnbmFsKGZhbHNlKTsgcmVhZG9ubHkgeWVhciA9IG5ldyBEYXRlKCkuZ2V0RnVsbFllYXIoKTtcclxuICBjb25zdHJ1Y3RvcigpIHsgdGhpcy5leHBpcmVkLnNldCh0aGlzLnJvdXRlLnNuYXBzaG90LnF1ZXJ5UGFyYW1NYXAuZ2V0KCdleHBpcmVkJykgPT09ICcxJyk7IH1cclxuICBhc3luYyBzdWJtaXQoKSB7IGlmICh0aGlzLmJ1c3koKSkgcmV0dXJuOyB0aGlzLmJ1c3kuc2V0KHRydWUpOyB0aGlzLmVycm9yLnNldCgnJyk7IHRyeSB7IGF3YWl0IHRoaXMuYXV0aC5sb2dpbih0aGlzLmxvZ2luLCB0aGlzLnBhc3N3b3JkLCB0aGlzLnJlbWVtYmVyKTsgY29uc3QgdGFyZ2V0ID0gdGhpcy5yb3V0ZS5zbmFwc2hvdC5xdWVyeVBhcmFtTWFwLmdldCgncmV0dXJuVXJsJyk7IGF3YWl0IHRoaXMucm91dGVyLm5hdmlnYXRlQnlVcmwodGFyZ2V0Py5zdGFydHNXaXRoKCcvJykgPyB0YXJnZXQgOiAnL2Rhc2hib2FyZCcpOyB9IGNhdGNoIHsgdGhpcy5lcnJvci5zZXQoJ1NpZ24taW4gZmFpbGVkLiBDaGVjayB5b3VyIGRldGFpbHMgb3IgdHJ5IGFnYWluIGxhdGVyLicpOyB9IGZpbmFsbHkgeyB0aGlzLmJ1c3kuc2V0KGZhbHNlKTsgfSB9XHJcbn1cclxuIiwiaW1wb3J0IHsgQ29tcG9uZW50IH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBSb3V0ZXJMaW5rIH0gZnJvbSAnQGFuZ3VsYXIvcm91dGVyJztcblxuQENvbXBvbmVudCh7IHNlbGVjdG9yOiAnYXBwLWFjY2Vzcy1kZW5pZWQnLCBzdGFuZGFsb25lOiB0cnVlLCBpbXBvcnRzOiBbUm91dGVyTGlua10sIHRlbXBsYXRlOiBgPG1haW4+PGRpdiBjbGFzcz1cInBhbmVsXCI+PHNwYW4gY2xhc3M9XCJpY29uXCI+NDAzPC9zcGFuPjxoMT5BY2Nlc3MgZGVuaWVkPC9oMT48cD5Zb3VyIGFjY291bnQgZG9lcyBub3QgaGF2ZSBwZXJtaXNzaW9uIHRvIHZpZXcgdGhpcyBwYWdlLjwvcD48YSByb3V0ZXJMaW5rPVwiL2Rhc2hib2FyZFwiPlJldHVybiB0byBkYXNoYm9hcmQ8L2E+PC9kaXY+PC9tYWluPmAsIHN0eWxlczogW2A6aG9zdHtkaXNwbGF5OmJsb2NrO21pbi1oZWlnaHQ6MTAwdmg7YmFja2dyb3VuZDojMDcxNDI2O2NvbG9yOiNlOWY1ZmM7Zm9udC1mYW1pbHk6c3lzdGVtLXVpfW1haW57bWluLWhlaWdodDoxMDB2aDtkaXNwbGF5OmdyaWQ7cGxhY2UtaXRlbXM6Y2VudGVyfS5wYW5lbHt0ZXh0LWFsaWduOmNlbnRlcjtwYWRkaW5nOjQycHg7Ym9yZGVyOjFweCBzb2xpZCAjMjQ0NTVmO2JhY2tncm91bmQ6IzEwMjk0MDtib3JkZXItcmFkaXVzOjE1cHh9Lmljb257Y29sb3I6IzI1YzZlNTtmb250LXdlaWdodDo4MDA7bGV0dGVyLXNwYWNpbmc6LjJlbX1we2NvbG9yOiNhOGJhY2J9YXtkaXNwbGF5OmlubGluZS1ibG9jazttYXJnaW4tdG9wOjE4cHg7Y29sb3I6IzQ4ZDdmMH1gXSB9KVxuZXhwb3J0IGNsYXNzIEFjY2Vzc0RlbmllZENvbXBvbmVudCB7fVxuIiwiaW1wb3J0IHsgaW5qZWN0IH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBDYW5BY3RpdmF0ZUZuLCBSb3V0ZXIgfSBmcm9tICdAYW5ndWxhci9yb3V0ZXInO1xuaW1wb3J0IHsgQXV0aFNlcnZpY2UgfSBmcm9tICcuL2F1dGguc2VydmljZSc7XG5cbmV4cG9ydCBjb25zdCBhdXRoR3VhcmQ6IENhbkFjdGl2YXRlRm4gPSBhc3luYyAoX3JvdXRlLCBzdGF0ZSkgPT4ge1xuICBjb25zdCBhdXRoID0gaW5qZWN0KEF1dGhTZXJ2aWNlKSwgcm91dGVyID0gaW5qZWN0KFJvdXRlcik7XG4gIGlmICghYXV0aC5yZWFkeSgpKSBhd2FpdCBhdXRoLnJlc3RvcmUoKTtcbiAgcmV0dXJuIGF1dGgudXNlcigpID8gdHJ1ZSA6IHJvdXRlci5jcmVhdGVVcmxUcmVlKFsnL2xvZ2luJ10sIHsgcXVlcnlQYXJhbXM6IHsgcmV0dXJuVXJsOiBzdGF0ZS51cmwgfSB9KTtcbn07XG5leHBvcnQgY29uc3Qgcm9sZUd1YXJkOiBDYW5BY3RpdmF0ZUZuID0gKHJvdXRlKSA9PiB7XG4gIGNvbnN0IGF1dGggPSBpbmplY3QoQXV0aFNlcnZpY2UpLCByb3V0ZXIgPSBpbmplY3QoUm91dGVyKTtcbiAgcmV0dXJuICFyb3V0ZS5kYXRhWydyb2xlcyddIHx8IHJvdXRlLmRhdGFbJ3JvbGVzJ10uaW5jbHVkZXMoYXV0aC51c2VyKCk/LnJvbGUpID8gdHJ1ZSA6IHJvdXRlci5jcmVhdGVVcmxUcmVlKFsnL2ZvcmJpZGRlbiddKTtcbn07XG4iLCJpbXBvcnQgeyBSb3V0ZXMgfSBmcm9tICdAYW5ndWxhci9yb3V0ZXInO1xuaW1wb3J0IHsgTG9naW5Db21wb25lbnQgfSBmcm9tICcuL2F1dGgvbG9naW4uY29tcG9uZW50JztcbmltcG9ydCB7IEFjY2Vzc0RlbmllZENvbXBvbmVudCB9IGZyb20gJy4vYXV0aC9hY2Nlc3MtZGVuaWVkLmNvbXBvbmVudCc7XG5pbXBvcnQgeyBhdXRoR3VhcmQsIHJvbGVHdWFyZCB9IGZyb20gJy4vYXV0aC9hdXRoLmd1YXJkJztcblxuZXhwb3J0IGNvbnN0IHJvdXRlczogUm91dGVzID0gW1xuICB7IHBhdGg6ICdsb2dpbicsIGNvbXBvbmVudDogTG9naW5Db21wb25lbnQgfSxcbiAgeyBwYXRoOiAnZm9yYmlkZGVuJywgY29tcG9uZW50OiBBY2Nlc3NEZW5pZWRDb21wb25lbnQsIGNhbkFjdGl2YXRlOiBbYXV0aEd1YXJkXSB9LFxuICB7IHBhdGg6ICdkYXNoYm9hcmQnLCBsb2FkQ29tcG9uZW50OiAoKSA9PiBpbXBvcnQoJy4vZGFzaGJvYXJkL2Rhc2hib2FyZCcpLnRoZW4oKG0pID0+IG0uRGFzaGJvYXJkQ29tcG9uZW50KSwgY2FuQWN0aXZhdGU6IFthdXRoR3VhcmQsIHJvbGVHdWFyZF0sIGRhdGE6IHsgcm9sZXM6IFsnU3VwZXIgQWRtaW4nLCdBZG1pbicsJ0lUIEVuZ2luZWVyJywnVmlld2VyJ10gfSB9LFxuICB7IHBhdGg6ICcnLCBwYXRoTWF0Y2g6ICdmdWxsJywgcmVkaXJlY3RUbzogJ2Rhc2hib2FyZCcgfSxcbiAgeyBwYXRoOiAnKionLCByZWRpcmVjdFRvOiAnZGFzaGJvYXJkJyB9LFxuXTtcbiIsImltcG9ydCB7IEh0dHBJbnRlcmNlcHRvckZuIH0gZnJvbSAnQGFuZ3VsYXIvY29tbW9uL2h0dHAnO1xuaW1wb3J0IHsgaW5qZWN0IH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBSb3V0ZXIgfSBmcm9tICdAYW5ndWxhci9yb3V0ZXInO1xuaW1wb3J0IHsgY2F0Y2hFcnJvciwgdGhyb3dFcnJvciB9IGZyb20gJ3J4anMnO1xuaW1wb3J0IHsgQXV0aFNlcnZpY2UgfSBmcm9tICcuL2F1dGguc2VydmljZSc7XG5cbmV4cG9ydCBjb25zdCBhdXRoSW50ZXJjZXB0b3I6IEh0dHBJbnRlcmNlcHRvckZuID0gKHJlcSwgbmV4dCkgPT4ge1xuICBjb25zdCBhdXRoID0gaW5qZWN0KEF1dGhTZXJ2aWNlKTtcbiAgY29uc3Qgcm91dGVyID0gaW5qZWN0KFJvdXRlcik7XG4gIGNvbnN0IGhlYWRlcnMgPSBhdXRoLmNzcmZUb2tlbigpICYmICFbJ0dFVCcsJ0hFQUQnLCdPUFRJT05TJ10uaW5jbHVkZXMocmVxLm1ldGhvZCkgPyByZXEuaGVhZGVycy5zZXQoJ1gtQ1NSRi1Ub2tlbicsIGF1dGguY3NyZlRva2VuKCkhKSA6IHJlcS5oZWFkZXJzO1xuICByZXR1cm4gbmV4dChyZXEuY2xvbmUoeyB3aXRoQ3JlZGVudGlhbHM6IHRydWUsIGhlYWRlcnMgfSkpLnBpcGUoY2F0Y2hFcnJvcigoZXJyKSA9PiB7XG4gICAgaWYgKGVyci5zdGF0dXMgPT09IDQwMSAmJiAhcmVxLnVybC5pbmNsdWRlcygnL2FwaS9hdXRoL2xvZ2luJykgJiYgIXJlcS51cmwuaW5jbHVkZXMoJy9hcGkvYXV0aC9jc3JmJykpIHtcbiAgICAgIGF1dGguZXhwaXJlKCk7IHZvaWQgcm91dGVyLm5hdmlnYXRlKFsnL2xvZ2luJ10sIHsgcXVlcnlQYXJhbXM6IHsgZXhwaXJlZDogJzEnIH0gfSk7XG4gICAgfSBlbHNlIGlmIChlcnIuc3RhdHVzID09PSA0MDMgJiYgIXJlcS51cmwuaW5jbHVkZXMoJy9hcGkvYXV0aC8nKSkge1xuICAgICAgdm9pZCByb3V0ZXIubmF2aWdhdGUoWycvZm9yYmlkZGVuJ10pO1xuICAgIH1cbiAgICByZXR1cm4gdGhyb3dFcnJvcigoKSA9PiBlcnIpO1xuICB9KSk7XG59O1xuIiwiaW1wb3J0IHsgQ29tcG9uZW50LCBpbmplY3QgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IFJvdXRlck91dGxldCB9IGZyb20gJ0Bhbmd1bGFyL3JvdXRlcic7XG5pbXBvcnQgeyBBdXRoU2VydmljZSB9IGZyb20gJy4vYXV0aC9hdXRoLnNlcnZpY2UnO1xuXG5AQ29tcG9uZW50KHsgc2VsZWN0b3I6ICdhcHAtcm9vdCcsIHN0YW5kYWxvbmU6IHRydWUsIGltcG9ydHM6IFtSb3V0ZXJPdXRsZXRdLCB0ZW1wbGF0ZTogYEBpZiAoYXV0aC5yZWFkeSgpKSB7IDxyb3V0ZXItb3V0bGV0IC8+IH0gQGVsc2UgeyA8bWFpbiBjbGFzcz1cImxvYWRpbmdcIj5Mb2FkaW5nIHNlY3VyZSBzZXNzaW9u4oCmPC9tYWluPiB9YCwgc3R5bGVzOiBbYC5sb2FkaW5ne21pbi1oZWlnaHQ6MTAwdmg7ZGlzcGxheTpncmlkO3BsYWNlLWl0ZW1zOmNlbnRlcjtiYWNrZ3JvdW5kOiMwNzE0MjY7Y29sb3I6I2I2ZDFlMjtmb250OjE0cHggc3lzdGVtLXVpfWBdIH0pXG5leHBvcnQgY2xhc3MgQXBwIHsgcmVhZG9ubHkgYXV0aCA9IGluamVjdChBdXRoU2VydmljZSk7IGNvbnN0cnVjdG9yKCkgeyB2b2lkIHRoaXMuYXV0aC5yZXN0b3JlKCk7IH0gfVxuIl0sIm1hcHBpbmdzIjoiOzs7OztBQUFBLFNBQVMsNEJBQTRCOzs7QUNBckMsU0FBNEIsMENBQTBDO0FBQ3RFLFNBQVMsbUJBQW1CLHdCQUF3QjtBQUNwRCxTQUFTLHFCQUFxQjs7O0FDRjlCLFNBQVMsV0FBVyxRQUFRLGNBQWM7QUFDMUMsU0FBUyxtQkFBbUI7QUFDNUIsU0FBUyxnQkFBZ0IsY0FBYzs7Ozs7QUFZbkIsSUFBQSw0QkFBQSxHQUFBLE9BQUEsRUFBQTtBQUFrQyxJQUFBLG9CQUFBLEdBQUEsa0RBQUE7QUFBZ0QsSUFBQSwwQkFBQTs7Ozs7QUFDcEYsSUFBQSw0QkFBQSxHQUFBLE9BQUEsRUFBQTtBQUFnQyxJQUFBLG9CQUFBLENBQUE7QUFBYSxJQUFBLDBCQUFBOzs7O0FBQWIsSUFBQSx1QkFBQTtBQUFBLElBQUEsK0JBQUEsT0FBQSxNQUFBLENBQUE7OztBQVc1QyxJQUFPLGlCQUFQLE1BQU8sZ0JBQWM7RUFDakIsT0FBTyxPQUFPLFdBQVc7RUFBVyxTQUFTLE9BQU8sTUFBTTtFQUFXLFFBQVEsT0FBTyxjQUFjO0VBQzFHLFFBQVE7RUFBSSxXQUFXO0VBQUksV0FBVztFQUFnQixPQUFPO0lBQU87Ozs7OztFQUFpQixVQUFVO0lBQU87Ozs7OztFQUFpQixRQUFRO0lBQU87Ozs7OztFQUFjLFVBQVU7SUFBTzs7Ozs7O0VBQWlCLFFBQU8sb0JBQUksS0FBSSxHQUFHLFlBQVc7RUFDbk4sY0FBQTtBQUFnQixTQUFLLFFBQVEsSUFBSSxLQUFLLE1BQU0sU0FBUyxjQUFjLElBQUksU0FBUyxNQUFNLEdBQUc7RUFBRztFQUM1RixNQUFNLFNBQU07QUFBSyxRQUFJLEtBQUssS0FBSTtBQUFJO0FBQVEsU0FBSyxLQUFLLElBQUksSUFBSTtBQUFHLFNBQUssTUFBTSxJQUFJLEVBQUU7QUFBRyxRQUFJO0FBQUUsWUFBTSxLQUFLLEtBQUssTUFBTSxLQUFLLE9BQU8sS0FBSyxVQUFVLEtBQUssUUFBUTtBQUFHLFlBQU0sU0FBUyxLQUFLLE1BQU0sU0FBUyxjQUFjLElBQUksV0FBVztBQUFHLFlBQU0sS0FBSyxPQUFPLGNBQWMsUUFBUSxXQUFXLEdBQUcsSUFBSSxTQUFTLFlBQVk7SUFBRyxRQUFRO0FBQUUsV0FBSyxNQUFNLElBQUksd0RBQXdEO0lBQUc7QUFBWSxXQUFLLEtBQUssSUFBSSxLQUFLO0lBQUc7RUFBRTs7cUNBSjVaLGlCQUFjO0VBQUE7NEVBQWQsaUJBQWMsV0FBQSxDQUFBLENBQUEsV0FBQSxDQUFBLEdBQUEsT0FBQSxJQUFBLE1BQUEsSUFBQSxRQUFBLENBQUEsQ0FBQSxHQUFBLGFBQUEsR0FBQSxDQUFBLGNBQUEseUJBQUEsR0FBQSxRQUFBLEdBQUEsQ0FBQSxHQUFBLE9BQUEsR0FBQSxDQUFBLEdBQUEsTUFBQSxHQUFBLENBQUEsR0FBQSxNQUFBLEdBQUEsQ0FBQSxHQUFBLGFBQUEsR0FBQSxDQUFBLEdBQUEsU0FBQSxHQUFBLENBQUEsR0FBQSxjQUFBLEdBQUEsQ0FBQSxHQUFBLFdBQUEsR0FBQSxDQUFBLEdBQUEsV0FBQSxHQUFBLENBQUEsR0FBQSxNQUFBLEdBQUEsQ0FBQSxHQUFBLE9BQUEsR0FBQSxDQUFBLEdBQUEsY0FBQSxHQUFBLENBQUEsR0FBQSxhQUFBLEdBQUEsQ0FBQSxHQUFBLFdBQUEsR0FBQSxDQUFBLEdBQUEsV0FBQSxHQUFBLENBQUEsR0FBQSxjQUFBLEdBQUEsQ0FBQSxHQUFBLE9BQUEsR0FBQSxDQUFBLFFBQUEsVUFBQSxHQUFBLFFBQUEsR0FBQSxDQUFBLFFBQUEsU0FBQSxHQUFBLE9BQUEsR0FBQSxDQUFBLEdBQUEsVUFBQSxHQUFBLENBQUEsT0FBQSxPQUFBLEdBQUEsQ0FBQSxNQUFBLFNBQUEsUUFBQSxTQUFBLGdCQUFBLFlBQUEsWUFBQSxJQUFBLGFBQUEsT0FBQSxlQUFBLG1CQUFBLEdBQUEsaUJBQUEsU0FBQSxHQUFBLENBQUEsR0FBQSxnQkFBQSxHQUFBLENBQUEsT0FBQSxVQUFBLEdBQUEsQ0FBQSxRQUFBLFVBQUEsR0FBQSxRQUFBLEdBQUEsT0FBQSxHQUFBLENBQUEsTUFBQSxZQUFBLFFBQUEsWUFBQSxnQkFBQSxvQkFBQSxZQUFBLElBQUEsYUFBQSxRQUFBLGVBQUEsdUJBQUEsR0FBQSxpQkFBQSxXQUFBLE1BQUEsR0FBQSxDQUFBLEdBQUEsVUFBQSxHQUFBLENBQUEsUUFBQSxZQUFBLFFBQUEsWUFBQSxHQUFBLGlCQUFBLFNBQUEsR0FBQSxDQUFBLFFBQUEsVUFBQSxHQUFBLFVBQUEsR0FBQSxVQUFBLEdBQUEsQ0FBQSxHQUFBLFVBQUEsR0FBQSxDQUFBLEdBQUEsTUFBQSxDQUFBLEdBQUEsVUFBQSxTQUFBLHdCQUFBLElBQUEsS0FBQTtBQUFBLFFBQUEsS0FB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LFlBQWMsTUFBSSxTQUFXLENBQUMsWUFBWSxHQUFDLFVBQVksZ0hBQXlHLFFBQUEsQ0FBQSwyVEFBQSxFQUFBLENBQUE7Ozs7aUZBQ3BMLEtBQUcsRUFBQSxXQUFBLE9BQUEsVUFBQSxrQkFBQSxZQUFBLEVBQUEsQ0FBQTtBQUFBLEdBQUE7Ozs7Ozs7K0RBQUgsS0FBRyxFQUFBLFNBQUEsQ0FBQUMsR0FBQSxHQUFBLENBQUEsY0FBQUQsVUFBQSxHQUFBLGFBQUEsRUFBQSxDQUFBO0VBQUE7QUFBQSxHQUFBLE9BQUEsY0FBQSxlQUFBLGNBQUEsWUFBQSxLQUFBLElBQUEsQ0FBQTtBQUFBLEdBQUEsT0FBQSxjQUFBLGVBQUEsZUFBQSxZQUFBLE9BQUEsWUFBQSxJQUFBLEdBQUEsNEJBQUEsQ0FBQSxNQUFBLEVBQUEsT0FBQSxNQUFBLFlBQUEsRUFBQSxTQUFBLENBQUE7QUFBQSxHQUFBOzs7QVBEaEIscUJBQXFCLEtBQUssU0FBUyxFQUNoQyxNQUFNLENBQUMsUUFBUSxRQUFRLE1BQU0sR0FBRyxDQUFDOyIsIm5hbWVzIjpbIkNvbXBvbmVudCIsImkwIiwiaW5qZWN0IiwiUm91dGVyIiwiaW5qZWN0IiwiUm91dGVyIiwiaW5qZWN0IiwiUm91dGVyIiwiaW5qZWN0IiwiUm91dGVyIiwiQ29tcG9uZW50IiwiaW5qZWN0IiwiaW5qZWN0IiwiQ29tcG9uZW50IiwiaTAiXSwiZGVidWdJZCI6IjM2Mzc2N2MwLWFlNzItNTcyZS1hY2NjLTc4ZjMxNjJlNjJmYiJ9

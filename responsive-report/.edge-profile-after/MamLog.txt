@@ -1,0 +1,44 @@
+[2026-10-30T06:56:31.713Z] [INFO] ========================================================================================================================
+[2026-10-30T06:56:31.713Z] [INFO] Initializing MAM Client.
+App: com.microsoft.edge 156.0.4314.50
+SDK: 2.4.2.0
+OS: windows 10.0.19045.6456
+DeviceType: Desktop
+Manufacturer: HP
+Model: HP EliteDesk 800 G3 SFF
+Telemetry: yes
+Managed device support: enabled
+[2026-10-30T06:56:31.714Z] [INFO] Telemetry session 09c74629-561f-479a-b396-e7dd6caec6e8.
+[2026-10-30T06:56:31.714Z] [INFO] ECS client initialized.
+[2026-10-30T06:56:31.714Z] [INFO] Initializing cache (v1).
+[2026-10-30T06:56:31.714Z] [INFO] Flight configuration defaults:
+{"924da161-897f-4061-ad83-eca72d58a16e_0":{"source":0,"value":false},"DesktopMAM_Canary":{"source":0,"value":0},"f9fec151-8ff5-437c-a028-0e92e9878d8d_0":{"source":0,"value":false},"f9fec151-8ff5-437c-a028-0e92e9878d8d_1":{"source":0,"value":false}}
+[2026-10-30T06:56:31.714Z] [INFO] Registered Flight Client FlightClientId:6a1b553f-06f8-43f5-8e14-2f7a7e4c3a01 with new flight key 0fa9bc49-afc6-41d8-81ca-8ce60b5287a7.
+[2026-10-30T06:56:31.744Z] [INFO] Started ECS service request processing.
+[2026-10-30T06:56:31.745Z] [INFO] Fetching flight data for flight key 0fa9bc49-afc6-41d8-81ca-8ce60b5287a7...
+[2026-10-30T06:56:32.013Z] [INFO] Flight data fetch for flight key 0fa9bc49-afc6-41d8-81ca-8ce60b5287a7 succeeded. (EcsCorrelationId:MIRA: 862c39bf-f56b-bb8d-7e89-4d188c72bf10 MA5P287CA0137 2026-10-30T06:51:30.066Z)
+[2026-10-30T06:56:32.013Z] [INFO] Scheduling next ECS request for flight key 0fa9bc49-afc6-41d8-81ca-8ce60b5287a7 at 2026-10-30T07:56:32.013Z.
+[2026-10-30T06:56:32.013Z] [INFO] Application flight configuration updated:
+{"924da161-897f-4061-ad83-eca72d58a16e_0":{"source":0,"value":false},"DesktopMAM_Canary":{"source":1,"value":1},"f9fec151-8ff5-437c-a028-0e92e9878d8d_0":{"source":0,"value":false},"f9fec151-8ff5-437c-a028-0e92e9878d8d_1":{"source":0,"value":false}}
+[2026-10-30T06:58:59.700Z] [INFO] ========================================================================================================================
+[2026-10-30T06:58:59.701Z] [INFO] Initializing MAM Client.
+App: com.microsoft.edge 156.0.4314.50
+SDK: 2.4.2.0
+OS: windows 10.0.19045.6456
+DeviceType: Desktop
+Manufacturer: HP
+Model: HP EliteDesk 800 G3 SFF
+Telemetry: yes
+Managed device support: enabled
+[2026-10-30T06:58:59.701Z] [INFO] Telemetry session 8812fa85-ff20-4827-aa42-cde8bc75f0ba.
+[2026-10-30T06:58:59.701Z] [INFO] ECS client initialized.
+[2026-10-30T06:58:59.701Z] [INFO] Reinitialized cache (v1).
+[2026-10-30T06:58:59.701Z] [INFO] Flight configuration defaults:
+{"924da161-897f-4061-ad83-eca72d58a16e_0":{"source":0,"value":false},"DesktopMAM_Canary":{"source":0,"value":0},"f9fec151-8ff5-437c-a028-0e92e9878d8d_0":{"source":0,"value":false},"f9fec151-8ff5-437c-a028-0e92e9878d8d_1":{"source":0,"value":false}}
+[2026-10-30T06:58:59.702Z] [INFO] Registered Flight Client FlightClientId:6a1b553f-06f8-43f5-8e14-2f7a7e4c3a01 with new flight key 6ed3d8ea-994b-4bdd-b606-40d75b919128.
+[2026-10-30T06:58:59.785Z] [INFO] Started ECS service request processing.
+[2026-10-30T06:58:59.785Z] [INFO] Fetching flight data for flight key 6ed3d8ea-994b-4bdd-b606-40d75b919128...
+[2026-10-30T06:59:00.679Z] [INFO] Flight data fetch for flight key 6ed3d8ea-994b-4bdd-b606-40d75b919128 succeeded. (EcsCorrelationId:MIRA: 187d523d-c7f1-5ccc-6d3a-d7ffa49097a3 MA5PR01CA0074 2026-10-30T06:53:58.740Z)
+[2026-10-30T06:59:00.679Z] [INFO] Scheduling next ECS request for flight key 6ed3d8ea-994b-4bdd-b606-40d75b919128 at 2026-10-30T07:59:00.679Z.
+[2026-10-30T06:59:00.679Z] [INFO] Application flight configuration updated:
+{"924da161-897f-4061-ad83-eca72d58a16e_0":{"source":0,"value":false},"DesktopMAM_Canary":{"source":1,"value":1},"f9fec151-8ff5-437c-a028-0e92e9878d8d_0":{"source":0,"value":false},"f9fec151-8ff5-437c-a028-0e92e9878d8d_1":{"source":0,"value":false}}

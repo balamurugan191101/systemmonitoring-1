@@ -1,0 +1,157 @@
+SYSTEM STORAGE MONITOR - WINDOWS COMMANDS
+========================================
+
+Run these commands in Command Prompt (CMD), from the project folder:
+
+    cd /d C:\Users\0363\Desktop\html\storage-monitor-dashboard
+
+
+1. FIRST-TIME SETUP
+-------------------
+
+Install Node.js (20 or newer) and Python (3.10 or newer), then install the
+project and file-watcher dependencies:
+
+    npm install
+    python -m pip install watchdog pywin32
+
+Create the local environment file if it does not exist:
+
+    copy .env.example .env
+
+Edit .env and set DATABASE_URL, SESSION_SECRET (at least 32 bytes), and
+PGSSL=true. Keep .env private; do not send or commit it.
+
+
+2. DATABASE AND FIRST ADMIN LOGIN
+---------------------------------
+
+Apply or update the PostgreSQL schema. This uses the Node PostgreSQL driver;
+the psql command-line program is not required:
+
+    npm run db:migrate
+
+Create the first Super Admin account. Enter a username, email, and password
+when prompted. Password must be 12-128 characters and contain uppercase,
+lowercase, and numeric characters:
+
+    npm run provision-admin
+
+Use that username or email and password on the dashboard login page. The
+provision command refuses to create another Super Admin if one already exists.
+
+
+3. START EVERYTHING WITH ONE COMMAND
+------------------------------------
+
+Start the API, Angular dashboard, and Python storage watcher together:
+
+    npm run start:all
+
+Open the dashboard at:
+
+    http://localhost:4200
+
+Press Ctrl+C in the same window to stop these services. The daily email
+scheduled task, if configured, runs separately through Windows Task Scheduler.
+
+
+4. START SERVICES IN SEPARATE WINDOWS (OPTIONAL)
+------------------------------------------------
+
+Open a separate CMD window for each command, after changing to the project
+folder in each window.
+
+API:
+
+    npm run api
+
+Dashboard:
+
+    npm start
+
+Storage watcher on selected folders:
+
+    python monitor\storage_monitor.py "D:\Projects" "E:\Shared"
+
+Storage watcher on all available drive roots:
+
+    python monitor\storage_monitor.py
+
+Install watcher dependencies if needed:
+
+    python -m pip install watchdog pywin32
+
+
+5. WATCH SPECIFIC DRIVES WITH start:all
+---------------------------------------
+
+To limit watched roots when using npm run start:all, put this in .env
+(separate drive paths with semicolons):
+
+    MONITOR_ROOTS=D:\;E:\
+
+To use one shared folder for watcher and API event logs, set an absolute
+writable path in .env, for example:
+
+    STORAGE_MONITOR_LOG_DIR=D:\StorageMonitorLogs
+
+
+6. DAILY DRIVE SCREENSHOT EMAIL
+-------------------------------
+
+Set SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_FROM, and MAIL_TO in
+.env. For SMTP port 587 use SMTP_SECURE=false; for port 465 use
+SMTP_SECURE=true. Keep the mail password private.
+
+Preview the screenshot without sending email:
+
+    npm run report:preview
+
+Send a one-time report:
+
+    npm run report:send
+
+Register or refresh the daily 9:00 AM Windows Task Scheduler task:
+
+    npm run report:schedule
+
+The scheduled task requires the computer to be on and connected at run time.
+
+
+7. BUILD AND TEST COMMANDS
+--------------------------
+
+Production Angular build:
+
+    npm run build
+
+API policy tests:
+
+    npm run test:api
+
+Angular tests:
+
+    npm test -- --watch=false
+
+Python tests:
+
+    python -m unittest discover -s tests
+
+
+8. COMMON TROUBLESHOOTING
+-------------------------
+
+Check whether the API port is listening (CMD):
+
+    netstat -ano | findstr :3100
+
+Check whether the Angular port is listening:
+
+    netstat -ano | findstr :4200
+
+If you changed server code, stop the old API with Ctrl+C in its terminal, then
+run npm run api again. A login 401 means the username/password was rejected;
+confirm you are using the account created by npm run provision-admin and the
+same DATABASE_URL as the API.
+
