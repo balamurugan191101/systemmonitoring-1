@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://localhost:3100",
-    "secure": false
+    "target": "https://systemmonitoring-2.onrender.com",
+    "secure": true
   }
 }
